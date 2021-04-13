@@ -12,6 +12,8 @@ pylab_params = {'legend.fontsize': 'medium',
                 'ytick.labelsize': 'medium'}
 pylab.rcParams.update(pylab_params)
 
+SPEED_OF_LIGHT = 299792458  # speed of light (3e8 m/s)
+
 
 def getWindowLength(f0=10e3, fs=2.5e6, windfunc='blackman', error=0.1):
     """
@@ -30,9 +32,9 @@ def getWindowLength(f0=10e3, fs=2.5e6, windfunc='blackman', error=0.1):
     # lowest detectable frequency by window
     ldf = f0 * error
 
-    if windfunc == 'Rectangular':
+    if windfunc == 'rectangular':
         M = int(fs / ldf)
-    elif windfunc in ('Bartlett', 'Hanning', 'Hamming'):
+    elif windfunc in ('bartlett', 'hanning', 'hamming'):
         M = int(4 * (fs / ldf))
     elif windfunc == 'blackman':
         M = int(6 * (fs / ldf))
@@ -93,7 +95,11 @@ def get_random_phase(dpi=np.pi / 2):
     return np.random.randint(5) * dpi
 
 
-def get_waveforms(xt, fc, df, modes=7, random_phase=False):
+def get_gaussian(f, fc, bw):
+    return np.exp(-0.5 * ((f - fc) / (0.849322 * bw/2)) ** 2)
+
+
+def get_waveforms(xt, fc, df, modes=5, bw=1e9, random_phase=False):
     yt_list = [None] * modes
     for mode in range(modes):
 
@@ -113,8 +119,8 @@ def get_waveforms(xt, fc, df, modes=7, random_phase=False):
         # pos = fc/2
         # A = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((pos - 1) / sigma)**2)
         # TODO: calculate bandwidth
-        sigma = df*(modes/4)
-        A = np.exp(-0.5 * ((f - fc+1) / sigma) ** 2)
+
+        A = get_gaussian(f, fc, bw)
         yt_list[mode] = A * np.sin(2 * np.pi * f * xt + phase)
     return yt_list
 
@@ -130,24 +136,56 @@ def simulation():
     # http://www.uobabylon.edu.iq/eprints/publication_2_14877_1775.pdf
 
     # PARAMETERS -------------------------------------------------------------------------------------------------------
-    fc = 1000  # center frequency
-    df = 10  # spectral separation of modes/tones
-    number_of_modes = 21  # number of modes/tones
-    gaussian_profile = 20  # Gaussian profile standard deviation
+    WINDOW_FUNC = 'hanning'
+    fc = 473.613e12  # actual vacuum frequency of HeNe (632.991 nm)
+    error = 0.01
+    emitted_modes = 7  # number of modes/tones
+    n = 1.0  # index of refraction
+    # laser_bw = 1.5e9  # HeNe
+    laser_bw = fc * 0.1
+
     random_phase = False
+    gaussian_profile = 20  # Gaussian profile standard deviation
+
+    print('laser bandwidth:', laser_bw/1e12, 'THz')
+
+    wavelength = SPEED_OF_LIGHT / fc
+    print('wavelength, lambda:', round(wavelength * 1e9, 3), 'nm')
+
+    df_max = laser_bw / emitted_modes
+    print('max frequency separation for number of emitted modes, df:', round(df_max / 1e9, 3), 'GHz')
+
+    cavity_modes = np.ceil(fc / (n * df_max))
+    print('cavity modes, m:', cavity_modes)
+
+    cavity_length = cavity_modes * wavelength / 2
+    print('cavity length, L:', round(cavity_length * 1e2, 3), 'cm')
+
+    cavity_df = SPEED_OF_LIGHT / (2 * n * cavity_length)
+    print('frequency separation of cavity, df:', round(cavity_df / 1e6, 3), 'MHz')
+
+    longitudinal_modes = int(laser_bw / cavity_df)  # the number of modes supported by the laser bandwidth
+    print('longitudinal modes supported:', longitudinal_modes)
+
+    FWHM = laser_bw
+    print('full wave, half maximum:', round(FWHM, 3))
+
+    laser_power = 0.0
+    print('laser power:', round(laser_power / 1e3, 3), 'mW')
 
     # TIME BASE --------------------------------------------------------------------------------------------------------
-    fs = 100000
-    main_lobe_error = 2 / 200
-    WINDOW_FUNC = 'blackman'
+    fs = fc * 100
+    main_lobe_error = min(cavity_df / (10*fc), error)
+
     N = getWindowLength(f0=fc, fs=fs, windfunc=WINDOW_FUNC, error=main_lobe_error)
 
     runtime = N / fs
+    print('runtime:', round(runtime*1e12, 3), 'ps')
     N_range = np.arange(0, N, 1)
     xt = N_range / fs
 
     # WAVEFORM GENERATOR -----------------------------------------------------------------------------------------------
-    yt_list = get_waveforms(xt, fc, df, modes=number_of_modes, random_phase=random_phase)
+    yt_list = get_waveforms(xt, fc, df=cavity_df, modes=emitted_modes, bw=laser_bw, random_phase=random_phase)
 
     # https://mathworld.wolfram.com/FourierTransformGaussian.html
     # https://math.stackexchange.com/questions/1267007/inverse-fourier-transform-of-gaussian
@@ -161,44 +199,70 @@ def simulation():
     xf_fft, yf_fft, xf_rfft, yf_rfft, fft_length, main_lobe_width = windowed_fft(yt, fs, N, WINDOW_FUNC)
 
     # PLOT GENERATOR -----------------------------------------------------------------------------------------------
-    figure = plt.figure(figsize=(12.8, 9.6), constrained_layout=True)  # default: figsize=(6.4, 4.8)
+    figure = plt.figure(figsize=(12.8, 9.6), constrained_layout=False)  # default: figsize=(6.4, 4.8)
     ax1 = figure.add_subplot(311)
     ax2 = figure.add_subplot(312)
     ax3 = figure.add_subplot(313)
 
+    xt_scale = 1e12
+    xf_scale = 1e12
+
     for yt_data in yt_list:
-        temporal1, = ax1.plot(xt, yt_data, '-')  # All signals
-    temporal2, = ax2.plot(xt, yt, '-')  # The summation of all signals
-    spectral1, = ax3.plot(xf_rfft, np.abs(yf_rfft), '-')  # The spectral plot of sum
+        temporal1, = ax1.plot(xt * xt_scale, yt_data, '-')  # All signals
+    temporal2, = ax2.plot(xt * xt_scale, yt, '-')  # The summation of all signals
+    spectral1, = ax3.plot(xf_rfft / xf_scale, np.abs(yf_rfft), '-')  # The spectral plot of sum
+    spectral2, = ax3.plot(xf_rfft / xf_scale, get_gaussian(xf_rfft, fc, laser_bw), '-')  # The spectral plot of sum
 
     # LIMITS -----------------------------------------------------------------------------------------------------------
     xt1_left = 0  # show the start of the data
-    xt1_right = 2 / df  # want to display two periods of the frequency step
-    ax1.set_xlim(left=xt1_left, right=xt1_right)
+    xt1_right = 2 / cavity_df  # want to display two periods of the frequency step
+    ax1.set_xlim(left=xt1_left * xt_scale, right=xt1_right * xt_scale)
     # ax1.set_ylim(bottom=yf_btm, top=yf_top)
 
     xt2_left = 0
-    xt2_right = 6 / df  # what to display two periods of the frequency step
-    ax2.set_xlim(left=xt2_left, right=xt2_right)
+    xt2_right = 6 / cavity_df  # what to display two periods of the frequency step
+    ax2.set_xlim(left=xt2_left * xt_scale, right=xt2_right * xt_scale)
     # ax2.set_ylim(bottom=yf_btm, top=yf_top)
 
-    bound = 2 * df * (number_of_modes - 1) / 2
+    bound = 2 * cavity_df * (emitted_modes - 1) / 2
     xf_left = max(0.0, fc - bound)
     xf_right = min(fc + bound, fs / 2)
-    ax3.set_xlim(left=xf_left, right=xf_right)
+    ax3.set_xlim(left=xf_left / xf_scale, right=xf_right / xf_scale)
     # ax3.set_ylim(bottom=yf_btm, top=yf_top)
 
     ax1.set_title('SAMPLED TIMED SERIES DATA')
-    ax1.set_xlabel('TIME (s)')
+    ax1.set_xlabel('TIME (ps)')
     ax1.set_ylabel('AMPLITUDE')
 
     ax2.set_title('SUMMATION OF ALL MODES/TONES')
-    ax2.set_xlabel('TIME (s)')
+    ax2.set_xlabel('TIME (ps)')
     ax2.set_ylabel('AMPLITUDE')
 
     ax3.set_title('SPECTRAL DATA')
-    ax3.set_xlabel('FREQUENCY (kHz)')
+    ax3.set_xlabel('FREQUENCY (THz)')
     ax3.set_ylabel('MAGNITUDE (V)')
+
+    # Annotations --------------------------------------------------------------------------------------------------
+    arrow_dim_obj = ax3.annotate("", xy=(0, 0), xytext=(0, 0),
+                                 textcoords=ax3.transData, arrowprops=dict(arrowstyle='<->'))
+    bbox = dict(fc="white", ec="none")
+    dim_text = ax3.text(0, 0, "", ha="center", va="center", bbox=bbox)
+
+    dim_left = (fc - laser_bw/2)/xf_scale
+    dim_right = (fc + laser_bw/2)/xf_scale
+    dim_height = get_gaussian(dim_left*xf_scale, fc, laser_bw)
+
+    # Arrow dimension line update ----------------------------------------------------------------------------------
+    # https://stackoverflow.com/a/48684902 -------------------------------------------------------------------------
+    arrow_dim_obj.xy = (dim_left, dim_height)
+    arrow_dim_obj.set_position((dim_right, dim_height))
+    arrow_dim_obj.textcoords = ax2.transData
+
+    # dimension text update ----------------------------------------------------------------------------------------
+    dim_text.set_position((dim_left + ((laser_bw/xf_scale) / 2), dim_height))
+    dim_text.set_text(f"FWHM: {round(FWHM/1e12, 3)} THz")
+
+    plt.tight_layout()
     plt.show()
 
 
