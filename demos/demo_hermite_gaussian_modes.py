@@ -15,6 +15,7 @@ zR = k * w0 ** 2.0 / 2  # Calculate the Rayleigh range
 z = 0.0
 [xx, yy] = np.meshgrid(np.linspace(-5, 5, num=250), np.linspace(-5, 5, num=250))  # default num is 50
 
+
 def hermiteH(n, x):
     if n == 0:
         return 1
@@ -24,6 +25,7 @@ def hermiteH(n, x):
         return 2 * x * hermiteH(n - 1, x) - 2 * (n - 1) * hermiteH(n - 2, x)
 
 
+# Gaussian Distribution for TEM00
 U00 = 1.0 / (1 + 1j * z / zR) * np.exp(-(xx ** 2 + yy ** 2) / w0 ** 2 / (1 + 1j * z / zR))
 Hn = hermiteH(n, xx)
 Hm = hermiteH(m, yy)

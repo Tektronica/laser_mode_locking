@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.pylab as pylab
+from scipy.signal import hilbert
 
 pylab_params = {'legend.fontsize': 'medium',
                 'font.family': 'Segoe UI',
@@ -49,7 +50,10 @@ def windowed_fft(yt, Fs, N, windfunc='blackman'):
     yt -= np.mean(yt)
 
     # Calculate windowing function and its length ----------------------------------------------------------------------
-    if windfunc == 'bartlett':
+    if windfunc == 'rectangular':
+        w = np.ones(N)
+        main_lobe_width = 2 * (Fs / N)
+    elif windfunc == 'bartlett':
         w = np.bartlett(N)
         main_lobe_width = 4 * (Fs / N)
     elif windfunc == 'hanning':
@@ -96,7 +100,7 @@ def get_random_phase(dpi=np.pi / 2):
 
 
 def get_gaussian(f, fc, bw):
-    return np.exp(-0.5 * ((f - fc) / (0.849322 * bw/2)) ** 2)
+    return np.exp(-0.5 * ((f - fc) / (0.849322 * bw / 2)) ** 2)
 
 
 def get_waveforms(xt, fc, df, modes=5, bw=1e9, random_phase=False):
@@ -125,6 +129,47 @@ def get_waveforms(xt, fc, df, modes=5, bw=1e9, random_phase=False):
     return yt_list
 
 
+def compute_envelope(signal):
+    # returns absolute value of the hilbert transformation
+    return abs(hilbert(signal))
+
+
+def find_range(f, x):
+    """
+    Find range between nearest local minima from peak at index x
+    """
+    lowermin = 0.0
+    uppermin = 0.0
+
+    for i in np.arange(x + 1, len(f)):
+        if f[i + 1] >= f[i]:
+            uppermin = i
+            break
+
+    for i in np.arange(x - 1, 0, -1):
+        if f[i] <= f[i - 1]:
+            lowermin = i + 1
+            break
+
+    return lowermin, uppermin
+
+
+def get_envelope_FWHM(envelope, fs):
+    """
+    computes the Full-Wave, Half-Maximum of the envelope
+    """
+    # skips the first peak. Data set potentially starts at the first peak, which prevents left min to be determined.
+    length = envelope.size
+    peak = int(np.argmax(envelope[int(length / 6):])+int(length / 6))
+    lowermin, uppermin = find_range(envelope, peak)
+
+    fwhm_index = np.where(np.isclose(envelope[lowermin:uppermin], envelope[peak]/2, atol=980e-6))
+    fwhm_val = envelope[fwhm_index[0]]
+    fwhm_width = np.diff(fwhm_index)/fs
+
+    return fwhm_val[0], fwhm_width[0][0]
+
+
 def rms_flat(a):
     """
     Return the root mean square of all the elements of *a*, flattened out.
@@ -136,10 +181,10 @@ def simulation():
     # http://www.uobabylon.edu.iq/eprints/publication_2_14877_1775.pdf
 
     # PARAMETERS -------------------------------------------------------------------------------------------------------
-    WINDOW_FUNC = 'hanning'
+    WINDOW_FUNC = 'rectangular'
     fc = 473.613e12  # actual vacuum frequency of HeNe (632.991 nm)
     error = 0.01
-    emitted_modes = 7  # number of modes/tones
+    emitted_modes = 15  # number of modes/tones
     n = 1.0  # index of refraction
     # laser_bw = 1.5e9  # HeNe
     laser_bw = fc * 0.1
@@ -147,10 +192,14 @@ def simulation():
     random_phase = False
     gaussian_profile = 20  # Gaussian profile standard deviation
 
-    print('laser bandwidth:', laser_bw/1e12, 'THz')
+    print('laser bandwidth:', laser_bw / 1e12, 'THz')
+
+    FWHM = laser_bw
+    print('full wave, half maximum:', laser_bw / 1e12, 'THz')
 
     wavelength = SPEED_OF_LIGHT / fc
     print('wavelength, lambda:', round(wavelength * 1e9, 3), 'nm')
+    print()
 
     df_max = laser_bw / emitted_modes
     print('max frequency separation for number of emitted modes, df:', round(df_max / 1e9, 3), 'GHz')
@@ -159,42 +208,38 @@ def simulation():
     print('cavity modes, m:', cavity_modes)
 
     cavity_length = cavity_modes * wavelength / 2
-    print('cavity length, L:', round(cavity_length * 1e2, 3), 'cm')
+    print('cavity length, L:', round(cavity_length * 1e2, 3), 'cm', round(cavity_length * 1e3, 3), '(mm)')
 
     cavity_df = SPEED_OF_LIGHT / (2 * n * cavity_length)
     print('frequency separation of cavity, df:', round(cavity_df / 1e6, 3), 'MHz')
 
     longitudinal_modes = int(laser_bw / cavity_df)  # the number of modes supported by the laser bandwidth
     print('longitudinal modes supported:', longitudinal_modes)
-
-    FWHM = laser_bw
-    print('full wave, half maximum:', round(FWHM, 3))
+    print()
 
     laser_power = 0.0
     print('laser power:', round(laser_power / 1e3, 3), 'mW')
 
     # TIME BASE --------------------------------------------------------------------------------------------------------
     fs = fc * 100
-    main_lobe_error = min(cavity_df / (10*fc), error)
+    main_lobe_error = min(cavity_df / (10 * fc), error)
 
     N = getWindowLength(f0=fc, fs=fs, windfunc=WINDOW_FUNC, error=main_lobe_error)
 
     runtime = N / fs
-    print('runtime:', round(runtime*1e12, 3), 'ps')
+    print('runtime:', round(runtime * 1e12, 3), 'ps')
     N_range = np.arange(0, N, 1)
     xt = N_range / fs
 
     # WAVEFORM GENERATOR -----------------------------------------------------------------------------------------------
     yt_list = get_waveforms(xt, fc, df=cavity_df, modes=emitted_modes, bw=laser_bw, random_phase=random_phase)
 
-    # https://mathworld.wolfram.com/FourierTransformGaussian.html
-    # https://math.stackexchange.com/questions/1267007/inverse-fourier-transform-of-gaussian
-    # https://www.youtube.com/watch?v=a8S26iExR7A
-    # sigma = (1/np.sqrt(2*np.pi))
-    # gaussian = (1/(sigma * np.sqrt(2*np.pi)))*np.exp((xt/sigma)**2)
-
     yt = np.sum(yt_list, axis=0)  # element-wise summation
-    # ytt = np.convolve(yt, gaussian)
+    yt_envelope = compute_envelope(yt)
+    fwhm_val, fwhm_width = get_envelope_FWHM(yt_envelope, fs)
+    print()
+    print('FWHM value:', round(fwhm_val, 1))
+    print('FWHM width:', round(fwhm_width*1e12, 3), 'ps')
 
     xf_fft, yf_fft, xf_rfft, yf_rfft, fft_length, main_lobe_width = windowed_fft(yt, fs, N, WINDOW_FUNC)
 
@@ -210,7 +255,8 @@ def simulation():
     for yt_data in yt_list:
         temporal1, = ax1.plot(xt * xt_scale, yt_data, '-')  # All signals
     temporal2, = ax2.plot(xt * xt_scale, yt, '-')  # The summation of all signals
-    spectral1, = ax3.plot(xf_rfft / xf_scale, np.abs(yf_rfft), '-')  # The spectral plot of sum
+    temporal3, = ax2.plot(xt * xt_scale, yt_envelope, '-')  # The envelope of the summation
+    spectral1, = ax3.plot(xf_rfft / xf_scale, np.abs(yf_rfft), '-', color='#C02942')  # The spectral plot of sum
     spectral2, = ax3.plot(xf_rfft / xf_scale, get_gaussian(xf_rfft, fc, laser_bw), '-')  # The spectral plot of sum
 
     # LIMITS -----------------------------------------------------------------------------------------------------------
@@ -248,9 +294,9 @@ def simulation():
     bbox = dict(fc="white", ec="none")
     dim_text = ax3.text(0, 0, "", ha="center", va="center", bbox=bbox)
 
-    dim_left = (fc - laser_bw/2)/xf_scale
-    dim_right = (fc + laser_bw/2)/xf_scale
-    dim_height = get_gaussian(dim_left*xf_scale, fc, laser_bw)
+    dim_left = (fc - laser_bw / 2) / xf_scale
+    dim_right = (fc + laser_bw / 2) / xf_scale
+    dim_height = get_gaussian(dim_left * xf_scale, fc, laser_bw)
 
     # Arrow dimension line update ----------------------------------------------------------------------------------
     # https://stackoverflow.com/a/48684902 -------------------------------------------------------------------------
@@ -259,8 +305,8 @@ def simulation():
     arrow_dim_obj.textcoords = ax2.transData
 
     # dimension text update ----------------------------------------------------------------------------------------
-    dim_text.set_position((dim_left + ((laser_bw/xf_scale) / 2), dim_height))
-    dim_text.set_text(f"FWHM: {round(FWHM/1e12, 3)} THz")
+    dim_text.set_position((dim_left + ((laser_bw / xf_scale) / 2), dim_height))
+    dim_text.set_text(f"FWHM: {round(FWHM / 1e12, 3)} THz")
 
     plt.tight_layout()
     plt.show()

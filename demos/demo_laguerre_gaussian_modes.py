@@ -20,6 +20,7 @@ xx, yy = np.meshgrid(np.linspace(-5, 5, num=250), np.linspace(-5, 5, num=250))
 r = np.sqrt(xx ** 2 + yy ** 2)
 phi = np.arctan2(yy, xx)
 
+# Gaussian Distribution for TEM00
 U00 = 1.0 / (1 + 1j * z / zR) * np.exp(-r ** 2.0 / w0 ** 2 / (1 + 1j * z / zR))
 w = w0 * np.sqrt(1.0 + z ** 2 / zR ** 2)
 R = np.sqrt(2.0) * r / w
