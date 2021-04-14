@@ -95,8 +95,11 @@ def windowed_fft(yt, Fs, N, windfunc='blackman'):
     return xf_fft, yf_fft, xf_rfft, yf_rfft, fft_length, main_lobe_width
 
 
-def get_random_phase(dpi=np.pi / 2):
-    return np.random.randint(5) * dpi
+def get_random_phase(dpi=np.pi / 6, distribution='gaussian'):
+    if distribution == 'random':
+        return np.random.randint(5) * dpi
+    else:
+        return int(np.random.normal(5)) * dpi
 
 
 def get_gaussian(f, fc, bw, bw_shape='gaussian'):
@@ -171,7 +174,11 @@ def get_envelope_FWHM(envelope, fs):
     fwhm_index = np.where(np.isclose(pulse, fwhm_val, atol=fwhm_val/(pulse.size/2)))
     fwhm_width = np.diff(fwhm_index)/fs
 
-    return fwhm_val, fwhm_width[0][0]
+    try:
+        return fwhm_val, fwhm_width[0][0]
+    except IndexError:
+        print('index was out of bounds. size 0 more than likely.')
+        return fwhm_val, np.NaN
 
 
 def rms_flat(a):
@@ -193,7 +200,7 @@ def simulation():
     # laser_bw = 1.5e9  # HeNe
     laser_bw = fc * 0.1
     BANDWIDTH_SHAPE = 'flat-top'  # gaussian
-    random_phase = False
+    random_phase = True
     gaussian_profile = 20  # Gaussian profile standard deviation
 
     print('laser bandwidth:', laser_bw / 1e12, 'THz')
