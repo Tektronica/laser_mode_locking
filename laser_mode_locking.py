@@ -152,7 +152,7 @@ def find_range(f, x):
         if f[i] <= f[i - 1]:
             lowermin = i + 1
             break
-    print(lowermin, uppermin)
+
     return lowermin, uppermin
 
 
@@ -162,27 +162,16 @@ def get_envelope_FWHM(envelope, fs):
     """
     # skips the first peak. Data set potentially starts at the first peak, which prevents left min to be determined.
     length = envelope.size
-    peak = int(np.argmax(envelope[int(length / 4):])+int(length / 4))
-    print(length)
-    print(int(np.argmax(envelope[int(length / 4):])))
-    print(int(length / 4))
-    print('peak index', peak)
-    print('envelope', envelope[peak])
-    lowermin, uppermin = find_range(envelope, peak)
+    chunk = int(length / 4)
+    peak_index = int(np.argmax(envelope[chunk:3*chunk]) + chunk)
+    lowermin, uppermin = find_range(envelope, peak_index)
+    fwhm_val = envelope[peak_index]/2
 
-    # fwhm_index = np.where(np.isclose(envelope[lowermin:uppermin], envelope[peak]/2, atol=980e-6))
-    # fwhm_val = envelope[fwhm_index[0]]
-    # fwhm_width = np.diff(fwhm_index)/fs
+    pulse = envelope[lowermin:uppermin]
+    fwhm_index = np.where(np.isclose(pulse, fwhm_val, atol=fwhm_val/(pulse.size/2)))
+    fwhm_width = np.diff(fwhm_index)/fs
 
-    # fwhm_index = np.where(np.isclose(envelope[lowermin:uppermin], envelope[peak]/2, atol=980e-6))
-    band = uppermin - lowermin
-    fwhm_band = int(band/2)
-    fwhm_val = envelope[lowermin + int(fwhm_band/2)]
-    print('band',band)
-    print('fwhm', fwhm_val)
-    fwhm_width = fwhm_band/fs
-
-    return fwhm_val, fwhm_width
+    return fwhm_val, fwhm_width[0][0]
 
 
 def rms_flat(a):
@@ -199,12 +188,11 @@ def simulation():
     WINDOW_FUNC = 'rectangular'
     fc = 473.613e12  # actual vacuum frequency of HeNe (632.991 nm)
     error = 0.01
-    emitted_modes = 7  # number of modes/tones
+    emitted_modes = 15  # number of modes/tones
     n = 1.0  # index of refraction
     # laser_bw = 1.5e9  # HeNe
     laser_bw = fc * 0.1
     BANDWIDTH_SHAPE = 'flat-top'  # gaussian
-    print((fc-laser_bw/2)/1e12, (fc+laser_bw/2)/1e12)
     random_phase = False
     gaussian_profile = 20  # Gaussian profile standard deviation
 
@@ -227,7 +215,7 @@ def simulation():
     print('cavity length, L:', round(cavity_length * 1e2, 3), 'cm', round(cavity_length * 1e3, 3), '(mm)')
 
     cavity_df = SPEED_OF_LIGHT / (2 * n * cavity_length)
-    print('frequency separation of cavity, df:', round(cavity_df / 1e6, 3), 'MHz')
+    print('frequency separation of cavity, df:', round(cavity_df / 1e9, 3), 'GHz')
 
     longitudinal_modes = int(laser_bw / cavity_df)  # the number of modes supported by the laser bandwidth
     print('longitudinal modes supported:', longitudinal_modes)
