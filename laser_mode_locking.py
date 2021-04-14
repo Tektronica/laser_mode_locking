@@ -99,11 +99,14 @@ def get_random_phase(dpi=np.pi / 2):
     return np.random.randint(5) * dpi
 
 
-def get_gaussian(f, fc, bw):
-    return np.exp(-0.5 * ((f - fc) / (0.849322 * bw / 2)) ** 2)
+def get_gaussian(f, fc, bw, bw_shape='gaussian'):
+    if bw_shape == 'gaussian':
+        return np.exp(-0.5 * ((f - fc) / (0.849322 * bw / 2)) ** 2)
+    else:
+        return np.where(f > (fc - bw / 2), np.where(f <= (fc + bw / 2), 1, 0), 0)
 
 
-def get_waveforms(xt, fc, df, modes=5, bw=1e9, random_phase=False):
+def get_waveforms(xt, fc, df, modes=5, bw=1e9, bw_shape='gaussian', random_phase=False):
     yt_list = [None] * modes
     for mode in range(modes):
 
@@ -123,8 +126,7 @@ def get_waveforms(xt, fc, df, modes=5, bw=1e9, random_phase=False):
         # pos = fc/2
         # A = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((pos - 1) / sigma)**2)
         # TODO: calculate bandwidth
-
-        A = get_gaussian(f, fc, bw)
+        A = get_gaussian(f, fc, bw, bw_shape=bw_shape)
         yt_list[mode] = A * np.sin(2 * np.pi * f * xt + phase)
     return yt_list
 
@@ -150,7 +152,7 @@ def find_range(f, x):
         if f[i] <= f[i - 1]:
             lowermin = i + 1
             break
-
+    print(lowermin, uppermin)
     return lowermin, uppermin
 
 
@@ -160,14 +162,27 @@ def get_envelope_FWHM(envelope, fs):
     """
     # skips the first peak. Data set potentially starts at the first peak, which prevents left min to be determined.
     length = envelope.size
-    peak = int(np.argmax(envelope[int(length / 6):])+int(length / 6))
+    peak = int(np.argmax(envelope[int(length / 4):])+int(length / 4))
+    print(length)
+    print(int(np.argmax(envelope[int(length / 4):])))
+    print(int(length / 4))
+    print('peak index', peak)
+    print('envelope', envelope[peak])
     lowermin, uppermin = find_range(envelope, peak)
 
-    fwhm_index = np.where(np.isclose(envelope[lowermin:uppermin], envelope[peak]/2, atol=980e-6))
-    fwhm_val = envelope[fwhm_index[0]]
-    fwhm_width = np.diff(fwhm_index)/fs
+    # fwhm_index = np.where(np.isclose(envelope[lowermin:uppermin], envelope[peak]/2, atol=980e-6))
+    # fwhm_val = envelope[fwhm_index[0]]
+    # fwhm_width = np.diff(fwhm_index)/fs
 
-    return fwhm_val[0], fwhm_width[0][0]
+    # fwhm_index = np.where(np.isclose(envelope[lowermin:uppermin], envelope[peak]/2, atol=980e-6))
+    band = uppermin - lowermin
+    fwhm_band = int(band/2)
+    fwhm_val = envelope[lowermin + int(fwhm_band/2)]
+    print('band',band)
+    print('fwhm', fwhm_val)
+    fwhm_width = fwhm_band/fs
+
+    return fwhm_val, fwhm_width
 
 
 def rms_flat(a):
@@ -184,11 +199,12 @@ def simulation():
     WINDOW_FUNC = 'rectangular'
     fc = 473.613e12  # actual vacuum frequency of HeNe (632.991 nm)
     error = 0.01
-    emitted_modes = 15  # number of modes/tones
+    emitted_modes = 7  # number of modes/tones
     n = 1.0  # index of refraction
     # laser_bw = 1.5e9  # HeNe
     laser_bw = fc * 0.1
-
+    BANDWIDTH_SHAPE = 'flat-top'  # gaussian
+    print((fc-laser_bw/2)/1e12, (fc+laser_bw/2)/1e12)
     random_phase = False
     gaussian_profile = 20  # Gaussian profile standard deviation
 
@@ -222,7 +238,7 @@ def simulation():
 
     # TIME BASE --------------------------------------------------------------------------------------------------------
     fs = fc * 100
-    main_lobe_error = min(cavity_df / (10 * fc), error)
+    main_lobe_error = min(cavity_df / (50 * fc), error)
 
     N = getWindowLength(f0=fc, fs=fs, windfunc=WINDOW_FUNC, error=main_lobe_error)
 
@@ -232,16 +248,19 @@ def simulation():
     xt = N_range / fs
 
     # WAVEFORM GENERATOR -----------------------------------------------------------------------------------------------
-    yt_list = get_waveforms(xt, fc, df=cavity_df, modes=emitted_modes, bw=laser_bw, random_phase=random_phase)
+    yt_list = get_waveforms(xt, fc,
+                            df=cavity_df, modes=emitted_modes,
+                            bw=laser_bw, bw_shape=BANDWIDTH_SHAPE, random_phase=random_phase)
 
     yt = np.sum(yt_list, axis=0)  # element-wise summation
     yt_envelope = compute_envelope(yt)
     fwhm_val, fwhm_width = get_envelope_FWHM(yt_envelope, fs)
     print()
-    print('FWHM value:', round(fwhm_val, 1))
+    print('FWHM value:', round(fwhm_val, 2))
     print('FWHM width:', round(fwhm_width*1e12, 3), 'ps')
 
     xf_fft, yf_fft, xf_rfft, yf_rfft, fft_length, main_lobe_width = windowed_fft(yt, fs, N, WINDOW_FUNC)
+    yf_smooth = get_gaussian(xf_rfft, fc, laser_bw, bw_shape=BANDWIDTH_SHAPE)
 
     # PLOT GENERATOR -----------------------------------------------------------------------------------------------
     figure = plt.figure(figsize=(12.8, 9.6), constrained_layout=False)  # default: figsize=(6.4, 4.8)
@@ -257,7 +276,7 @@ def simulation():
     temporal2, = ax2.plot(xt * xt_scale, yt, '-')  # The summation of all signals
     temporal3, = ax2.plot(xt * xt_scale, yt_envelope, '-')  # The envelope of the summation
     spectral1, = ax3.plot(xf_rfft / xf_scale, np.abs(yf_rfft), '-', color='#C02942')  # The spectral plot of sum
-    spectral2, = ax3.plot(xf_rfft / xf_scale, get_gaussian(xf_rfft, fc, laser_bw), '-')  # The spectral plot of sum
+    spectral2, = ax3.plot(xf_rfft / xf_scale, yf_smooth, '-')  # The spectral plot of sum
 
     # LIMITS -----------------------------------------------------------------------------------------------------------
     xt1_left = 0  # show the start of the data
