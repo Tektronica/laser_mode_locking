@@ -200,20 +200,15 @@ transition levels is derived specifically from the probability for an
 electron to occupy a transition level overlapping with the probability
 to occupy the orbital ground state of an atom.
 
-| <img src="media/e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />                                                                                                                             | <img src="media/5aee7decdc00d09e995ccbc976602224aa778bcd.png" style="width:3in;height:2.03151in" alt="example of population inversion." /> |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| **Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime. |                                                                                                                                      |
+<img src="media/e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />
+
+**Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime.
 
 | **Relative population of occupying atoms** | **Dominant state**                                                                                                                                                                                                                                                                                                                                             |
 |--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                            
- *N*<sub>1</sub> \> *N*<sub>2</sub>          | Most atoms occupy the ground state and thus most transit photons are likely absorbed and spat back out nanoseconds later just to probably have the same process occur again up the road.                                                                                                                                                                       |
-|                                            |                                                                                                                                                                                                                                                                                                                                                                |
-|                                            
- *N*<sub>1</sub> = *N*<sub>2</sub>           | When population of atoms occupying a ground state becomes equal to the population of atoms occupying an energized state, the photon production falls to zero. No new photons are produced and the photons you start with are the same number of photons that emerge out of the system.                                                                         |
-|                                            |                                                                                                                                                                                                                                                                                                                                                                |
-|                                            
- *N*<sub>1</sub> \< *N*<sub>2</sub>          | **Population Inversion**. Most atoms occupy an energized state to promote photon generation. While absorption still occurs along a transit photon’s path through the atomic minefield, the generation of new photons greatly dominates the system. Without active pumping, population inversion tends to collapse back into *N*<sub>1</sub> = *N*<sub>2</sub>. |
+| *N*<sub>1</sub> \> *N*<sub>2</sub>          | Most atoms occupy the ground state and thus most transit photons are likely absorbed and spat back out nanoseconds later just to probably have the same process occur again up the road.                                                                                                                                                                      |
+| *N*<sub>1</sub> = *N*<sub>2</sub>           | When population of atoms occupying a ground state becomes equal to the population of atoms occupying an energized state, the photon production falls to zero. No new photons are produced and the photons you start with are the same number of photons that emerge out of the system.                                                                        |
+| *N*<sub>1</sub> \< *N*<sub>2</sub>          | **Population Inversion**. Most atoms occupy an energized state to promote photon generation. While absorption still occurs along a transit photon’s path through the atomic minefield, the generation of new photons greatly dominates the system. Without active pumping, population inversion tends to collapse back into *N*<sub>1</sub> = *N*<sub>2</sub>.|
 
 # Three- and Four-level Energy bands
 
@@ -316,9 +311,9 @@ How do collimator’s work? Do they polarize? Employ electromagnetic
 properties? Or is it that they are designed to only allowed the photons
 oriented a certain direction to escape?
 
-| <img src="media/f49d0b02c5e9936b19ccdc8f76055b0a122b69a3.png" style="width:4in;height:1.91081in" />                                                                                                                                                                                                          | <img src="20252d173da8dbd9700417a4a10d85877da8af92.png" style="width:2in;height:1.53163in" /> |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Illustration of a Nd:YAG solid-state laser being pumped by a flashlamp to stimulate the emission of photons within a confocal laser cavity resonator. In most applications, the output laser light is narrowed, and the direction of photons arranged parallel to one another using a collimated lens. |                                                                                               |
+<img src="media/f49d0b02c5e9936b19ccdc8f76055b0a122b69a3.png" style="width:4in;height:1.91081in" />
+
+Illustration of a Nd:YAG solid-state laser being pumped by a flashlamp to stimulate the emission of photons within a confocal laser cavity resonator. In most applications, the output laser light is narrowed, and the direction of photons arranged parallel to one another using a collimated lens.                                                                                               |
 
 The Fabry–Pérot is the most basic example of a cavity resonator
 constructed of two flat (plane-parallel) mirrors. This cavity is also
@@ -330,9 +325,7 @@ However, in these situations, a special reflective film is typically
 coated on either end of the crystal gain medium rather than using
 physical mirrors.
 
-| <img src="media/94ff3cb975d14e106bfd13e82a0bf7ccd9d20722.png" style="width:3in;height:1.1144in" />               |
-|------------------------------------------------------------------------------------------------------------|
-| A plane-parallel cavity resonator has flat mirrors (plane-parallel) that are difficult to precisely align. |
+<img src="media/94ff3cb975d14e106bfd13e82a0bf7ccd9d20722.png" style="width:3in;height:1.1144in" />
 
 > The precision of the Fabry–Pérot cavity makes it suitable for
 > applications where alignment is critical. For example, the LIGO
