@@ -427,7 +427,9 @@ mode-locked laser.
 > caused by separation of corneal tissue is then folded back to allow
 > reshaping of the corneal tissue using an excimer lens.
 
+<p align="center">
 <img src="media/19516eb2708a8df360718ea7870a1911954263e3.png" style="width:4in;height:2.14047in" alt="phase-locked and unlocked multimode operation" />
+</p>
 
 # Transverse Modes
 
@@ -446,7 +448,9 @@ require greater care. Why is the output of longitudinal such a nicely
 behaved wavefront, but for transverse it seems… a bit of a mess, from
 this photo?
 
+<p align="center">
 <img src="media/c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png" style="width:4.5in;height:2.51026in" />
+</p>
 
 Basic experiments can demonstrate the various lower order transverse
 modes. For instance, mounting one of the cavity mirrors onto a precision
@@ -461,7 +465,9 @@ narrowing aperture in line with the beam. Narrowing the aperture removes
 higher order transverse modes from the beam while passing only the
 fundamental transverse mode, TEM00.
 
+<p align="center">
 <img src="media/225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" />
+</p>
 
 # Sources:
 
