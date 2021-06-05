@@ -380,7 +380,10 @@ laser gain medium emitting the photons as well.
 The standing wave equation for the fundamental mode of a laser cavity
 with an undetermined phase *φ* is represented as:
 
-$$y(t) = \\sin{\\left( 2\\pi f\_{1}t \\pm \\varphi \\right) = \\boxed{\\sin\\left( 2\\pi\\frac{c}{\\lambda\_{1}}t\\  \\pm \\ \\varphi \\right)}\\ }$$
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?\bg_white&space;y(t) = A \sin{(2 \pi f_{1} t \pm  \varphi)} = A \sin{(2 \pi \frac{c}{\lambda_{1}} t \pm  \varphi)}"
+title="1111" />
+</p>
 
 The frequency, *f*, is the rate at which a photon propagates through a
 medium and should not be confused with the velocity at which the photon
