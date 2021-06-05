@@ -244,6 +244,7 @@ that metastable state and go on up to the other energy levels instead?
 
 # Laser Gain Mediums
 
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Crystals**       | Typically doped with rare earth metals: (neodymium, ytterbium, or erbium) or transition metal ions (titanium or chromium); most often yttrium aluminum garnet (Y3Al5O12), yttrium orthovanadate (YVO4), or sapphire (Al2O3);\[1\] and not often Cesium cadmium bromide (CsCdBr3) |
 | **Glasses**        | silicate or phosphate glasses, doped with laser-active ions                                                                                                                                                                                                                      |
 | **Gases**          | mixtures of helium and neon (HeNe), nitrogen, argon, carbon monoxide, carbon dioxide, or metal vapors                                                                                                                                                                            |
