@@ -300,10 +300,9 @@ is, in fact, determined by the length of the cavity. This is indicated
 by the primary wavelength, *λ*<sub>1</sub>, or first mode of the cavity
 being expressed as:
 
-|                        
- *λ*<sub>1</sub> = 2*L*  | or  |                            
-                                $$f\_{1} = \\frac{2L}{c}$$  |
-|------------------------|-----|----------------------------|
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?{\lambda_1}={2L}\quad\quad\text{or}\quad\quad{f_1}=\frac{2L}{c}" title="{\lambda_1}={2L}\quad\quad\text{or}\quad\quad{f_1}=\frac{2L}{c}" />
+</p>
 
 **Note**: losses due to diffraction and absorption within the cavity are
 omitted from the expression. However, losses typically modify the
@@ -381,7 +380,7 @@ The standing wave equation for the fundamental mode of a laser cavity
 with an undetermined phase *φ* is represented as:
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.image?\bg_white&space;y(t)&space;=&space;A\sin{\left(2\pi{f_{1}{t}}\pm\varphi\right)}&space;=&space;A\sin{\left(2\pi\frac{c}{\lambda_{1}}t\pm\varphi\right)}" title="\bg_white y(t) = A\sin{\left(2\pi{f_{1}{t}}\pm\varphi\right)} = A\sin{\left(2\pi\frac{c}{\lambda_{1}}t\pm\varphi\right)}" />
+<img src="https://latex.codecogs.com/svg.image?\bg_white&space;y(t)&space;=&space;A\sin{\left(2\pi{f_{1}{t}}\pm\varphi\right)}&space;=&space;\boxed{A\sin{\left(2\pi\frac{c}{\lambda_{1}}t\pm\varphi\right)}}" title="\bg_white y(t) = A\sin{\left(2\pi{f_{1}{t}}\pm\varphi\right)} = \boxed{A\sin{\left(2\pi\frac{c}{\lambda_{1}}t\pm\varphi\right)}}" />
 </p>
 
 The frequency, *f*, is the rate at which a photon propagates through a
@@ -392,7 +391,9 @@ which the photon propagates through that cavity must thereby be
 proportional to the length as well. Consequently, the frequency at which
 a standing wave within the laser cavity is expressed as:
 
-$$f\_{1} = \\frac{c}{\\lambda\_{1}} = \\boxed{\\frac{c}{2L}}$$
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?{f_1}=\frac{c}{\lambda_1}=\boxed{\frac{c}{2L}}" title="{f_1}=\frac{c}{\lambda_1}=\boxed{\frac{c}{2L}}" />
+</p>
 
 In the above expression, both length and velocity, c, of the frequency
 must remain fixed. Then, to obey the rule that a standing wave must
@@ -401,7 +402,9 @@ frequency modes permitted must be an integer multiple, q, of the
 fundamental frequency of the cavity. Thus, discrete modes, q, of the
 radiated frequencies of photons occupying the cavity is expressed as:
 
-$$f\_{q} = \\boxed{q \\cdot \\frac{c}{2L}}$$
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?{f_q}=\boxed{{q}\cdot\frac{c}{2L}}" title="{f_q}=\boxed{{q}\cdot\frac{c}{2L}}" />
+</p>
 
 Non-integer values of q are not permitted since the resultant wave
 within the cavity would have discontinuous endpoints that do not match
@@ -409,7 +412,9 @@ up. Subsequently, the cavity modes are truly discretely spaced since the
 frequency separation, or difference, of two neighboring modes resolves
 the fundamental frequency of the laser cavity. In other words:
 
-$$\\boxed{\\Delta f = f\_{q} - f\_{q - 1} = \\frac{c}{2L}}$$
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?\boxed{{\Delta{f}}={f_q}-{f_{q-1}=\frac{c}{2L}" title="\boxed{{\Delta{f}}={f_q}-{f_{q-1}=\frac{c}{2L}" />
+</p>
 
 <p align="center">
 <img src="media/5097c7f91855c584c88dc9b01d4da764703778ce.png" style="width:2.99975in;height:1.56733in" />
