@@ -96,7 +96,7 @@ far discussed:
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="1050ff09924f80f48c51fe94e8fd6ba06474d548.png" style="width:4.13127in;height:2.25in" /></th>
+<th><img src="media/1050ff09924f80f48c51fe94e8fd6ba06474d548.png" style="width:4.13127in;height:2.25in" /></th>
 </tr>
 </thead>
 <tbody>
@@ -148,7 +148,7 @@ exponentially generate new photons within a system, clearly then more
 atoms need to occupy an energized state than their ground state. To do
 so, a process referred to as **Population Inversion** is employed.
 
-| <img src="2dd842933a8825ab3b094b5597443cb703870fa2.gif" style="width:3.37856in;height:2.25in" alt="image" />                                                                                                                                                                                   |
+| <img src="media/2dd842933a8825ab3b094b5597443cb703870fa2.gif" style="width:3.37856in;height:2.25in" alt="image" />                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                                                                                                                                                                                                                                                |
 | Unlike in normal population distributions that occur naturally where more atoms occupy an unexcited ground state, a population inversion forces a dominant number of atoms to occupy a higher excited state. Typically, an external pump source energizes the atoms out of their ground state. |
@@ -200,7 +200,7 @@ transition levels is derived specifically from the probability for an
 electron to occupy a transition level overlapping with the probability
 to occupy the orbital ground state of an atom.
 
-| <img src="e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />                                                                                                                             | <img src="5aee7decdc00d09e995ccbc976602224aa778bcd.png" style="width:3in;height:2.03151in" alt="example of population inversion." /> |
+| <img src="media/e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />                                                                                                                             | <img src="media/5aee7decdc00d09e995ccbc976602224aa778bcd.png" style="width:3in;height:2.03151in" alt="example of population inversion." /> |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | **Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime. |                                                                                                                                      |
 
@@ -281,7 +281,7 @@ first **mode**, of the system and since energy of a photon is its
 propagation frequency, only photons of a specific energy are permitted
 to travel within the laser cavity.
 
-| <img src="e8bdc0e86250525c33bef4ae236318a0d7dfb4b5.jpg" style="width:3.00032in;height:2in" alt="Standing Wave: Definition, Ratio, Examples And Explanation » Science ABC" /> |
+| <img src="media/e8bdc0e86250525c33bef4ae236318a0d7dfb4b5.jpg" style="width:3.00032in;height:2in" alt="Standing Wave: Definition, Ratio, Examples And Explanation » Science ABC" /> |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                                                                                                                              |
 | A standing wave oscillates in time with a changing amplitude appearing in a fixed position. The endpoints of a standing wave must end and start at the same point.           |
@@ -315,7 +315,7 @@ How do collimator’s work? Do they polarize? Employ electromagnetic
 properties? Or is it that they are designed to only allowed the photons
 oriented a certain direction to escape?
 
-| <img src="f49d0b02c5e9936b19ccdc8f76055b0a122b69a3.png" style="width:4in;height:1.91081in" />                                                                                                                                                                                                          | <img src="20252d173da8dbd9700417a4a10d85877da8af92.png" style="width:2in;height:1.53163in" /> |
+| <img src="media/f49d0b02c5e9936b19ccdc8f76055b0a122b69a3.png" style="width:4in;height:1.91081in" />                                                                                                                                                                                                          | <img src="20252d173da8dbd9700417a4a10d85877da8af92.png" style="width:2in;height:1.53163in" /> |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | Illustration of a Nd:YAG solid-state laser being pumped by a flashlamp to stimulate the emission of photons within a confocal laser cavity resonator. In most applications, the output laser light is narrowed, and the direction of photons arranged parallel to one another using a collimated lens. |                                                                                               |
 
@@ -329,7 +329,7 @@ However, in these situations, a special reflective film is typically
 coated on either end of the crystal gain medium rather than using
 physical mirrors.
 
-| <img src="94ff3cb975d14e106bfd13e82a0bf7ccd9d20722.png" style="width:3in;height:1.1144in" />               |
+| <img src="media/94ff3cb975d14e106bfd13e82a0bf7ccd9d20722.png" style="width:3in;height:1.1144in" />               |
 |------------------------------------------------------------------------------------------------------------|
 | A plane-parallel cavity resonator has flat mirrors (plane-parallel) that are difficult to precisely align. |
 
@@ -349,9 +349,9 @@ where the gain medium is placed. These cavities are typically used in
 applications where more uniformly distributed beam irradiance is focused
 at the beam center since narrower beams produce less angular deviation.
 
-| <img src="d135ea3a985fa6f9ace49f041740def0a1e5c40c.png" style="width:3in;height:0.92931in" />                                                                                                                                             |
+| <img src="media/d135ea3a985fa6f9ace49f041740def0a1e5c40c.png" style="width:3in;height:0.92931in" />                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="182af9caa667de2b3905505e49daa5542aa35add.png" style="width:3in;height:1.2455in" />                                                                                                                                              |
+| <img src="media/182af9caa667de2b3905505e49daa5542aa35add.png" style="width:3in;height:1.2455in" />                                                                                                                                              |
 | A symmetric confocal cavity resonator has less-than spherical cut mirrors with a radius of equal radii to the cavity length. The beam waist, *w*<sub>*o*</sub><sup>2</sup>, is found at the center where the gain medium is often placed. |
 
 # Longitudinal Modes
@@ -400,7 +400,7 @@ the fundamental frequency of the laser cavity. In other words:
 
 $$\\boxed{\\Delta f = f\_{q} - f\_{q - 1} = \\frac{c}{2L}}$$
 
-| <img src="5097c7f91855c584c88dc9b01d4da764703778ce.png" style="width:2.99975in;height:1.56733in" />                                                               |
+| <img src="media/5097c7f91855c584c88dc9b01d4da764703778ce.png" style="width:2.99975in;height:1.56733in" />                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                                                                                                                   |
 | Illustration of different modes (q) resonating within the laser cavity. The allowed modes of the cavity are integer multiples of fundamental mode *f*<sub>1</sub> |
@@ -423,7 +423,7 @@ within the cavity. For gaussian distributions, the laser threshold is
 typically expressed as the full width, half max (FWHM) of the gain
 curve. That is, the width of the curve at half the maximum value.
 
-| <img src="a8351d0b93d43244d6899b893395f5e9ab415e92.gif" style="width:3.5in;height:2.77584in" />                                                                                                                                                                                                                                                                                                     |
+| <img src="media/a8351d0b93d43244d6899b893395f5e9ab415e92.gif" style="width:3.5in;height:2.77584in" />                                                                                                                                                                                                                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Typically, active gain mediums are expressed as having a near gaussian distribution. That is, most of the photon population are emitted at a specific frequency. However, due to manufacturing and material differences in the medium, other frequencies are emitted as well. However, longitudinal modes form within the cavity for lasing frequencies that only obey the standing wave condition. |
@@ -445,9 +445,9 @@ mode-locked laser.
 > caused by separation of corneal tissue is then folded back to allow
 > reshaping of the corneal tissue using an excimer lens.
 
-| <img src="f91b1170e3c1df526d49bdb98dbb13fc92448de9.png" style="width:3.99889in;height:1.13913in" />                                                         |
+| <img src="media/f91b1170e3c1df526d49bdb98dbb13fc92448de9.png" style="width:3.99889in;height:1.13913in" />                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="19516eb2708a8df360718ea7870a1911954263e3.png" style="width:4in;height:2.14047in" alt="phase-locked and unlocked multimode operation" />           |
+| <img src="media/19516eb2708a8df360718ea7870a1911954263e3.png" style="width:4in;height:2.14047in" alt="phase-locked and unlocked multimode operation" />           |
 |                                                                                                                                                             |
 | Mode-locked techniques of Longitudinal laser modes will create short pulses. Modes without mode locking have random phase and thus no pulse shaping occurs. |
 
@@ -468,7 +468,7 @@ require greater care. Why is the output of longitudinal such a nicely
 behaved wavefront, but for transverse it seems… a bit of a mess, from
 this photo?
 
-| <img src="c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png" style="width:4.5in;height:2.51026in" />                                                                                                                                           |
+| <img src="media/c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png" style="width:4.5in;height:2.51026in" />                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                                                                                                                                                                                           |
 | Schematic of a Fabry-Perot (FP) cavity laser. It consists of a pair of mirrors on either side of a gain medium. The cavity resonance condition determines (A) the transverse and (B) the longitudinal field profiles of the cavity modes. |
@@ -493,8 +493,8 @@ fundamental transverse mode, TEM00.
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" /></th>
-<th><img src="b08fc0c3145facf46b9227a84832f91a09c2d393.png" /></th>
+<th><img src="media/225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" /></th>
+<th><img src="media/b08fc0c3145facf46b9227a84832f91a09c2d393.png" /></th>
 </tr>
 </thead>
 <tbody>
