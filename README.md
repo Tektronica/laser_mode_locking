@@ -381,8 +381,7 @@ The standing wave equation for the fundamental mode of a laser cavity
 with an undetermined phase *φ* is represented as:
 
 <p align="center">
-<img src="https://latex.codecogs.com/svg.image?\bg_white&space;y(t) = A \sin{(2 \pi f_{1} t \pm  \varphi)} = A \sin{(2 \pi \frac{c}{\lambda_{1}} t \pm  \varphi)}"
-title="1111" />
+<img src="https://latex.codecogs.com/svg.image?\bg_white&space;y(t)&space;=&space;A&space;\sin{(2&space;\pi&space;f_{1}&space;t&space;\pm&space;&space;\varphi)}&space;=&space;A&space;\sin{(2&space;\pi&space;\frac{c}{\lambda_{1}}&space;t&space;\pm&space;&space;\varphi)}" title="\bg_white y(t) = A \sin{(2 \pi f_{1} t \pm \varphi)} = A \sin{(2 \pi \frac{c}{\lambda_{1}} t \pm \varphi)}" />title="1111" />
 </p>
 
 The frequency, *f*, is the rate at which a photon propagates through a
