@@ -1,6 +1,6 @@
 # Table of Contents
 1. [Introduction](#introduction)
-2. [Lasers, an overview](#lasers\,-an-overview)
+2. [Lasers, an overview](#lasers-an-overview)
 3. [Photon Absorption and Emission](#photon-absorption-and-emission)
 4. [Population Inversion and the Journey to Excess Photon Generation](#population-inversion-and-the-journey-to-excess-photon-generation)
 5. [Three- and Four-level Energy bands](#three\--and-four\-level-energy-bands)
@@ -17,6 +17,10 @@ This demonstration explores cavity-modes and mode-locked lasers. The
 simulation is of a mode-locked laser where the cavity length, the gain
 medium, and the number of modes centered around the central mode
 frequency are specified.
+
+<p align="center">
+<img src="media/GUI.png"/>
+</p>
 
 # Lasers, an overview
 
@@ -107,7 +111,7 @@ The diagram below summarizes the various forms of photon interaction so
 far discussed:
 
 <p align="center">
-<img src="media/1050ff09924f80f48c51fe94e8fd6ba06474d548.png" style="width:4.13127in;height:2.25in" />
+<img src="media/emission.png"/>
 </p>
 
 > Three forms of photon interaction are illustrated for an atom described with a 3-level electron energy diagram.
@@ -117,44 +121,6 @@ far discussed:
 |**(A) Absorption**           |occurs when a photon carrying quanta of energy is absorbed by an atom causing an atom’s electron to transition to a higher energy level for a short period of time.                                |
 |**(B) Spontaneous Emission** |occurs when the electron can no longer hold its higher energy state and releases the original quanta of energy in the form of a photon causing the atom to drop back down to a lower energy level. |
 |**(C) Stimulated Emission**  |occurs when an atom can exist in a higher energy state long enough to interact with a photon causing a second photon to be generated.                                                              |
-
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p></p>
-<table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 72%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>(A) Absorption</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>(B) Spontaneous Emission</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>(C) Stimulated Emission</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table></td>
-</tr>
-</tbody>
-</table>
 
 # Population Inversion and the Journey to Excess Photon Generation
 
@@ -177,7 +143,7 @@ atoms need to occupy an energized state than their ground state. To do
 so, a process referred to as **Population Inversion** is employed.
 
 <p align="center">
-<img src="media/2dd842933a8825ab3b094b5597443cb703870fa2.gif" style="width:3.37856in;height:2.25in" alt="image" />
+<img src="media/inversion.png"/>
 </p>
 
 > Unlike in normal population distributions that occur naturally where
@@ -234,7 +200,7 @@ electron to occupy a transition level overlapping with the probability
 to occupy the orbital ground state of an atom.
 
 <p align="center">
-<img src="media/e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />
+<img src="media/distribution.jpg"/>
 </p>
 > **Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime.
 
@@ -265,7 +231,7 @@ above the ground state? What would cause atoms to normally skip through
 that metastable state and go on up to the other energy levels instead?
 
 <p align="center">
-<img src="media/5a74e56958954d92d0e005a9eb76eccccaa172fb.png" style="width:4.13726in;height:1.5in" alt="three-level versus four-level system" />
+<img src="media/levels.png"/>
 </p>
 
 |           |                                                                                                                                                                                                           |
@@ -315,7 +281,7 @@ propagation frequency, only photons of a specific energy are permitted
 to travel within the laser cavity.
 
 <p align="center">
-<img src="media/e8bdc0e86250525c33bef4ae236318a0d7dfb4b5.jpg" style="width:3.00032in;height:2in" alt="Standing Wave: Definition, Ratio, Examples And Explanation » Science ABC" />
+<img src="media/standing_waves.jpg"/>
 </p>
 
 Not all photons emitted by the gain medium form a standing wave inside
@@ -347,7 +313,7 @@ properties? Or is it that they are designed to only allowed the photons
 oriented a certain direction to escape?
 
 <p align="center">
-<img src="media/f49d0b02c5e9936b19ccdc8f76055b0a122b69a3.png" style="width:4in;height:1.91081in" />
+<img src="media/NdYag_laser.png"/>
 </p>
 
 Illustration of a Nd:YAG solid-state laser being pumped by a flashlamp to stimulate the emission of photons within a confocal laser cavity resonator. In most applications, the output laser light is narrowed, and the direction of photons arranged parallel to one another using a collimated lens.                                                                                               |
@@ -363,7 +329,7 @@ coated on either end of the crystal gain medium rather than using
 physical mirrors.
 
 <p align="center">
-<img src="media/94ff3cb975d14e106bfd13e82a0bf7ccd9d20722.png" style="width:3in;height:1.1144in" />
+<img src="media/fabry.png"/>
 </p>
 
 > The precision of the Fabry–Pérot cavity makes it suitable for
@@ -383,7 +349,7 @@ applications where more uniformly distributed beam irradiance is focused
 at the beam center since narrower beams produce less angular deviation.
 
 <p align="center">
-<img src="media/d135ea3a985fa6f9ace49f041740def0a1e5c40c.png" style="width:3in;height:0.92931in" />
+<img src="media/confocal.png"/>
 </p>
 
 # Longitudinal Modes
@@ -441,7 +407,7 @@ the fundamental frequency of the laser cavity. In other words:
 </p>
 
 <p align="center">
-<img src="media/5097c7f91855c584c88dc9b01d4da764703778ce.png" style="width:2.99975in;height:1.56733in" />
+<img src="media/longitudinal.png"/>
 </p>
 
 The number of possible longitudinal modes of a cavity is determined by
@@ -463,7 +429,7 @@ typically expressed as the full width, half max (FWHM) of the gain
 curve. That is, the width of the curve at half the maximum value.
 
 <p align="center">
-<img src="media/a8351d0b93d43244d6899b893395f5e9ab415e92.gif" style="width:3.5in;height:2.77584in" />
+<img src="media/gain_medium.gif"/>
 </p>
 
 # Mode Locking
@@ -484,7 +450,7 @@ mode-locked laser.
 > reshaping of the corneal tissue using an excimer lens.
 
 <p align="center">
-<img src="media/19516eb2708a8df360718ea7870a1911954263e3.png" style="width:4in;height:2.14047in" alt="phase-locked and unlocked multimode operation" />
+<img src="media/mode_lock.png"/>
 </p>
 
 # Transverse Modes
@@ -505,7 +471,7 @@ behaved wavefront, but for transverse it seems… a bit of a mess, from
 this photo?
 
 <p align="center">
-<img src="media/c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png" style="width:4.5in;height:2.51026in" />
+<img src="media/transverse_longitudinal.png"/>
 </p>
 
 Basic experiments can demonstrate the various lower order transverse
@@ -522,7 +488,7 @@ higher order transverse modes from the beam while passing only the
 fundamental transverse mode, TEM00.
 
 <p align="center">
-<img src="media/225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" />
+<img src="media/gaussian.png" />
 </p>
 
 # Sources
