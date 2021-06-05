@@ -202,10 +202,11 @@ to occupy the orbital ground state of an atom.
 <p align="center">
 <img src="media/distribution.jpg"/>
 </p>
+
 > **Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime.
 
-| **Relative population of occupying atoms** | **Dominant state**                                                                                                                                                                                                                                                                                                                                             |
-|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Relative population of occupying atoms** | **Dominant state**                                                                                                                                                                                                                                                                                                                                            |
+|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *N*<sub>1</sub> \> *N*<sub>2</sub>         | Most atoms occupy the ground state and thus most transit photons are likely absorbed and spat back out nanoseconds later just to probably have the same process occur again up the road.                                                                                                                                                                      |
 | *N*<sub>1</sub> = *N*<sub>2</sub>          | When population of atoms occupying a ground state becomes equal to the population of atoms occupying an energized state, the photon production falls to zero. No new photons are produced and the photons you start with are the same number of photons that emerge out of the system.                                                                        |
 | *N*<sub>1</sub> \< *N*<sub>2</sub>         | **Population Inversion**. Most atoms occupy an energized state to promote photon generation. While absorption still occurs along a transit photon’s path through the atomic minefield, the generation of new photons greatly dominates the system. Without active pumping, population inversion tends to collapse back into *N*<sub>1</sub> = *N*<sub>2</sub>.|
@@ -316,7 +317,7 @@ oriented a certain direction to escape?
 <img src="media/NdYag_laser.png"/>
 </p>
 
-Illustration of a Nd:YAG solid-state laser being pumped by a flashlamp to stimulate the emission of photons within a confocal laser cavity resonator. In most applications, the output laser light is narrowed, and the direction of photons arranged parallel to one another using a collimated lens.                                                                                               |
+> Illustration of a Nd:YAG solid-state laser being pumped by a flashlamp to stimulate the emission of photons within a confocal laser cavity resonator. In most applications, the output laser light is narrowed, and the direction of photons arranged parallel to one another using a collimated lens.                                                                                               |
 
 The Fabry–Pérot is the most basic example of a cavity resonator
 constructed of two flat (plane-parallel) mirrors. This cavity is also
