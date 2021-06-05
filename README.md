@@ -152,7 +152,7 @@ so, a process referred to as **Population Inversion** is employed.
 <img src="media/2dd842933a8825ab3b094b5597443cb703870fa2.gif" style="width:3.37856in;height:2.25in" alt="image" />
 </p>
 
-Unlike in normal population distributions that occur naturally where
+> Unlike in normal population distributions that occur naturally where
 more atoms occupy an unexcited ground state, a population inversion
 forces a dominant number of atoms to occupy a higher excited state.
 Typically, an external pump source energizes the atoms out of their
@@ -209,7 +209,7 @@ to occupy the orbital ground state of an atom.
 <img src="media/e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />
 </p>
 
-**Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime.
+> **Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime.
 
 | **Relative population of occupying atoms** | **Dominant state**                                                                                                                                                                                                                                                                                                                                             |
 |--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
