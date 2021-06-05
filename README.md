@@ -1,3 +1,16 @@
+# Table of Contents
+1. [Introduction](#introduction)
+2. [Lasers, an overview](#lasers,-an-overview)
+3. [Photon Absorption and Emission](#photon-absorption-and-emission)
+4. [Population Inversion and the Journey to Excess Photon Generation](#population-inversion-and-the-journey-to-excess-photon-generation)
+5. [Three- and Four-level Energy bands](#three\--and-four\-level-energy-bands)
+6. [Laser Gain Mediums](#laser-gain-mediums)
+7. [Optical Cavity Resonators](#optical-cavity-resonators)
+8. [Longitudinal Modes](#longitudinal-modes)
+9. [Mode Locking](#mode-locking)
+10. [Transverse Modes](#transverse-modes)
+11. [Sources](#sources)
+
 # Introduction
 
 This demonstration explores cavity-modes and mode-locked lasers. The
@@ -5,7 +18,7 @@ simulation is of a mode-locked laser where the cavity length, the gain
 medium, and the number of modes centered around the central mode
 frequency are specified.
 
-# Lasers, an overview:
+# Lasers, an overview
 
 Lasers are highly tunable devices capable of either delivering a very
 narrow (near single) frequency of light or a broadband of frequencies
@@ -501,7 +514,7 @@ fundamental transverse mode, TEM00.
 <img src="media/225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" />
 </p>
 
-# Sources:
+# Sources
 
 <https://micro.magnet.fsu.edu/primer/java/lasers/electroncycle/index.html>
 
