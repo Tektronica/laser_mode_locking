@@ -40,10 +40,10 @@ absorbed or emitted, was directly proportional to the frequency of the
 radiation by the scalar constant, Planck’s constant. Consequently,
 Planck’s relation states the photon energy is:
 
-![\frac{1}{N}\sum\limits_{n=0}^{N-1}{|X[n]|^{2}}](https://latex.codecogs.com/svg.latex?\frac{1}{N}\sum\limits_{n=0}^{N-1}{|X[n]|^{2}})
-
-<img src="https://latex.codecogs.com/svg.image?\bg_white&space;\frac{hf}{1.6\times10^{-19}&space;[J]}\quad[eV]"
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?\bg_white&space;E=\frac{hf}{1.6\times10^{-19}&space;[J]}\quad[eV]"
 title="1111" />
+</p>
 
 Furthermore, Bohr established a frequency condition which stated the
 energy absorbed or emitted by an atom during an electron transition is
