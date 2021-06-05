@@ -40,7 +40,9 @@ absorbed or emitted, was directly proportional to the frequency of the
 radiation by the scalar constant, Planck’s constant. Consequently,
 Planck’s relation states the photon energy is:
 
-$$E = \\frac{\\text{hf}}{1.6 \\times 10^{- 19}\\ \\lbrack\\ J\\rbrack}\\ \\lbrack eV\\rbrack$$
+<img src="https://latex.codecogs.com/svg.image?\bg_white&space;
+\frac{hf}{1.6\times10^{-19}&space;[J]}\quad[eV]"
+title="\bg_white \frac{hf}{1.6\times10^{-19} [J]}\quad[eV]" />
 
 Furthermore, Bohr established a frequency condition which stated the
 energy absorbed or emitted by an atom during an electron transition is
