@@ -258,9 +258,8 @@ def worker(params):
     dim_left = (fc - laser_bw / 2) / xf_scale
     dim_right = (fc + laser_bw / 2) / xf_scale
     dim_height = get_gaussian(dim_left * xf_scale, fc, laser_bw)
-    print(fwhm_val)
+
     dim_label = f"FWHM: {round(laser_bw / 1e12, 3)} THz"
-    print(dim_label)
     dim_label_pos = (laser_bw / xf_scale) / 2
 
     data = (wavelength, laser_bw, df_max, cavity_modes, cavity_length, cavity_df, longitudinal_modes, fwhm_val, fwhm_width, runtime)
@@ -285,7 +284,6 @@ def simulation():
     random_phase = True
 
     params = (fc, laser_bw, emitted_modes, refraction_index, bandwidth_shape, window, MLW, random_phase)
-    print(params)
     data, plot_data, plot_limits = worker(params)
 
     wavelength, laser_bw, df_max, cavity_modes, cavity_length, cavity_df, longitudinal_modes, fwhm_val, fwhm_width, runtime = data
