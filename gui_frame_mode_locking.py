@@ -48,6 +48,7 @@ class MyDemoPanel(wx.Panel):
         self.toolbar = NavigationToolbar(self.canvas)
         self.toolbar.Realize()
 
+        # Plot objects -------------------------------------------------------------------------------------------------
         self.ax1 = self.figure.add_subplot(311)
         self.ax2 = self.figure.add_subplot(312)
         self.ax3 = self.figure.add_subplot(313)
@@ -58,6 +59,16 @@ class MyDemoPanel(wx.Panel):
         self.spectral, = self.ax3.plot([], [], color='#C02942')
         self.spectral_envelope, = self.ax3.plot([], [], color='tab:blue')
 
+        # Plot Annotations ---------------------------------------------------------------------------------------------
+        # https://stackoverflow.com/a/38677732
+        self.arrow_dim_obj = self.ax3.annotate("", xy=(0, 0), xytext=(0, 0),
+                                               textcoords=self.ax3.transData, arrowprops=dict(arrowstyle='<->'))
+        self.bar_dim_obj = self.ax3.annotate("", xy=(0, 0), xytext=(0, 0),
+                                             textcoords=self.ax3.transData, arrowprops=dict(arrowstyle='|-|'))
+        bbox = dict(fc="white", ec="none")
+        self.dim_text = self.ax3.text(0, 0, "", ha="center", va="center", bbox=bbox)
+
+        # BINDINGS =====================================================================================================
         self.combo_window = wx.ComboBox(self.left_panel, wx.ID_ANY,
                                         choices=["Rectangular", "Bartlett", "Hanning", "Hamming", "Blackman"],
                                         style=wx.CB_DROPDOWN | wx.CB_READONLY)
@@ -331,35 +342,15 @@ class MyDemoPanel(wx.Panel):
         MLW = to_float(self.text_ctrl_mainlobe.GetValue())
         random_phase = bool(self.checkbox_random_phase.GetValue())
 
-        print(fc, emitted_modes, refraction_index, bandwidth_shape, window, MLW, random_phase)
-
         return fc, laser_bw, emitted_modes, refraction_index, bandwidth_shape, window, MLW, random_phase
 
     def update(self, evt):
         try:
             params = self.get_values()
-            print(params)
-            data, plot_data = worker.worker(params)
+
+            data, plot_data, plot_limits = worker.worker(params)
+
             self.results_update(data)
-
-            fc, laser_bw, emitted_modes, refraction_index, bandwidth_shape, window, MLW, random_phase = params
-            wavelength, laser_bw, df_max, cavity_modes, cavity_length, cavity_df, longitudinal_modes, fwhm_val, fwhm_width, runtime = data
-
-            xt1_left = 0  # show the start of the data
-            xt1_right = 2 / cavity_df  # want to display two periods of the frequency step
-
-            xt2_left = 0
-            xt2_right = 6 / cavity_df  # what to display two periods of the frequency step
-
-            fc = fc*1e12
-            fs = fc * 100
-
-            bound = 2 * cavity_df * (emitted_modes - 1) / 2
-            xf_left = max(0.0, fc - bound)
-            xf_right = min(fc + bound, fs / 2)
-
-            plot_limits = (xt1_left, xt1_right, xt2_left, xt2_right, xf_left, xf_right)
-
             self.plot(plot_data, plot_limits)
 
         except ValueError as e:
@@ -386,7 +377,7 @@ class MyDemoPanel(wx.Panel):
     def plot(self, plot_data, plot_limits):
 
         xt, yt_list, yt, yt_envelope, xf_rfft, yf_rfft, yf_smooth = plot_data
-        xt1_left, xt1_right, xt2_left, xt2_right, xf_left, xf_right = plot_limits
+        xt1_left, xt1_right, xt2_left, xt2_right, xf_left, xf_right, dim_left, dim_right, dim_height, dim_label, dim_label_pos = plot_limits
 
         xt_scale = 1e12
         xf_scale = 1e12
@@ -397,13 +388,14 @@ class MyDemoPanel(wx.Panel):
         yt_limit2 = int(xt2_right / xt_delta)
 
         self.ax1.clear()
-        self.ax1.plot(xt[:yt_limit]*xt_scale, (yt_list[:, :yt_limit]).T)  # All signals
+        self.ax1.plot(xt[:yt_limit] * xt_scale, (yt_list[:, :yt_limit]).T)  # All signals
         self.ax1.set_title('SAMPLED TIMED SERIES DATA')
         self.ax1.set_xlabel('TIME (ps)')
         self.ax1.set_ylabel('AMPLITUDE')
 
         self.temporal_sum.set_data(xt[:yt_limit2] * xt_scale, yt[:yt_limit2])  # The summation of all signals
-        self.temporal_hilbert.set_data(xt[:yt_limit2] * xt_scale, yt_envelope[:yt_limit2])  # The envelope of the summation
+        self.temporal_hilbert.set_data(xt[:yt_limit2] * xt_scale,
+                                       yt_envelope[:yt_limit2])  # The envelope of the summation
 
         self.ax1.set_xlim(left=xt1_left * xt_scale, right=xt1_right * xt_scale)
 
@@ -415,6 +407,16 @@ class MyDemoPanel(wx.Panel):
 
         self.ax3.set_xlim(left=xf_left / xf_scale, right=xf_right / xf_scale)
 
+        # Arrow dimension line update ----------------------------------------------------------------------------------
+        # https://stackoverflow.com/a/48684902 -------------------------------------------------------------------------
+        self.arrow_dim_obj.xy = (dim_left, dim_height)
+        self.arrow_dim_obj.set_position((dim_right, dim_height))
+        self.arrow_dim_obj.textcoords = self.ax3.transData
+
+        # dimension text update ----------------------------------------------------------------------------------------
+        self.dim_text.set_position((dim_left + dim_label_pos, dim_height))
+        self.dim_text.set_text(dim_label)
+
         # REDRAW PLOT --------------------------------------------------------------------------------------------------
         self.plot_redraw()
 
@@ -424,10 +426,8 @@ class MyDemoPanel(wx.Panel):
             self.ax2.relim()  # recompute the ax.dataLim
             self.ax3.relim()  # recompute the ax.dataLim
         except MemoryError as e:
-            # xt_length = len(self.ax1.get_xdata())
-            # yt_length = len(self.ax1.get_ydata())
-            # print(f'Are the lengths of xt: {xt_length} and yt: {yt_length} mismatched?')
             raise ValueError(str(e))
+
         self.ax1.margins(x=0)
         self.ax1.autoscale(axis='y')
         self.ax2.autoscale(axis='y')
@@ -468,6 +468,7 @@ class MyDemoPanel(wx.Panel):
         print()
         print('FWHM value:', round(fwhm_val, 2))
         print('FWHM width:', round(fwhm_width * 1e12, 3), 'ps')
+        print()
 
 
 # FOR RUNNING INDEPENDENTLY ============================================================================================
