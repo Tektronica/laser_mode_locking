@@ -12,15 +12,15 @@ narrow (near single) frequency of light or a broadband of frequencies
 much like a comb. In general applications such as laser pointers, lasers
 are most noted for their spatial coherence. That is, their ability to
 maintain their near uniform intensity and shape across far distances.
-Thomas Young's double-slit experiment was first to conceive of this
+Thomas Young’s double-slit experiment was first to conceive of this
 notion of coherence where a wave propagating through space can be
-described by the statistical similarity of the wave's attributes between
+described by the statistical similarity of the wave’s attributes between
 two points in space. Coherence in lasers arises from the principle of
 stimulated emission, which serves as the required amplification inside
 lasers to create an intense beam of emitted photons. This concept of
 stimulated emissions inside a laser device is what led to its own
-namesake since LASER was initially just the acronym for "**L**ight
-**A**mplification by **S**timulated **E**mission of **R**adiation".
+namesake since LASER was initially just the acronym for “**L**ight
+**A**mplification by **S**timulated **E**mission of **R**adiation”.
 
 # Photon Absorption and Emission
 
@@ -32,35 +32,35 @@ electron contained within an orbital of an atom has the chance to absorb
 the quanta of energy carried by a photon passing nearby. This causes the
 electron to transition into a higher energy state and thus effectively
 raises its atom to an energetic state above its own ground state. The
-"lifetime" for an atom to exist in this excited state is finite and may
+“lifetime” for an atom to exist in this excited state is finite and may
 only last on the order of nanoseconds.
 
 Max Planck determined the frequency of the photon, or the radiant energy
 absorbed or emitted, was directly proportional to the frequency of the
-radiation by the scalar constant, Planck's constant. Consequently,
-Planck's relation states the photon energy is:
+radiation by the scalar constant, Planck’s constant. Consequently,
+Planck’s relation states the photon energy is:
 
-$$E = \frac{\text{hf}}{1.6 \times 10^{- 19}\ \lbrack\ J\rbrack}\ \lbrack eV\rbrack$$
+$$E = \\frac{\\text{hf}}{1.6 \\times 10^{- 19}\\ \\lbrack\\ J\\rbrack}\\ \\lbrack eV\\rbrack$$
 
 Furthermore, Bohr established a frequency condition which stated the
 energy absorbed or emitted by an atom during an electron transition is
 equal to the frequency of the photon. Consequently, energy of a system
-after photon interaction will change by units of $\text{hf}$
-(electron-volts) before or after an electronic transition. This means
-the change in energy $\Delta E$ in a system is equal to the photon
-energy absorbed or emitted.
+after photon interaction will change by units of hf (electron-volts)
+before or after an electronic transition. This means the change in
+energy *Δ**E* in a system is equal to the photon energy absorbed or
+emitted.
 
 When the electron reoccupies its original orbital energy state after
 occupying a higher energy level, the atom falls back to its ground state
 but not before also emitting a photon. This photon carries the quanta of
 energy lost by the atom and originally carried by the first photon, as
-per Bohr's frequency condition. This form of photon generation is
+per Bohr’s frequency condition. This form of photon generation is
 referred to as spontaneous emission and occurs naturally.
 
-We don't normally perceive spontaneous emissions because it's rare to
+We don’t normally perceive spontaneous emissions because it’s rare to
 find an atom above its ground level. When one does, though, the
 frequency of occurrence is random enough that we cannot entirely
-perceive any quantized amount of photon emission above our eye's
+perceive any quantized amount of photon emission above our eye’s
 perceivable threshold. Photons are spontaneously emitting all around us
 though.
 
@@ -90,36 +90,48 @@ is lost to the emitted photon rather than gained.
 The diagram below summarizes the various forms of photon interaction so
 far discussed:
 
-+-----------------------------------------------------------------------+
-| ![](1050                                                              |
-| ff09924f80f48c51fe94e8fd6ba06474d548.png){width="4.131270778652668in" |
-| height="2.25in"}                                                      |
-+=======================================================================+
-| Three forms of photon interaction are illustrated for an atom         |
-| described with a 3-level electron energy diagram.                     |
-|                                                                       |
-|   ------------------------------------------------------------------  |
-|   **(A) Absorption** occurs when a photon carrying quanta of energy   |
-|                      is absorbed by an atom causing an atom's         |
-|                      electron to transition to a higher energy level  |
-|                      for a short period of time.                      |
-|   ------------------ -----------------------------------------------  |
-|   **(B) Spontaneous  occurs when the electron can no longer hold its  |
-|   Emission**         higher energy state and releases the original    |
-|                      quanta of energy in the form of a photon         |
-|                      causing the atom to drop back down to a lower    |
-|                      energy level.                                    |
-|                                                                       |
-|   **(C) Stimulated   occurs when an atom can exist in a higher        |
-|   Emission**         energy state long enough to interact with a      |
-|                      photon causing a second photon to be generated.  |
-|   ------------------------------------------------------------------  |
-+-----------------------------------------------------------------------+
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><img src="1050ff09924f80f48c51fe94e8fd6ba06474d548.png" style="width:4.13127in;height:2.25in" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Three forms of photon interaction are illustrated for an atom described with a 3-level electron energy diagram.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>(A) Absorption</strong></th>
+<th>occurs when a photon carrying quanta of energy is absorbed by an atom causing an atom’s electron to transition to a higher energy level for a short period of time.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>(B) Spontaneous Emission</strong></td>
+<td>occurs when the electron can no longer hold its higher energy state and releases the original quanta of energy in the form of a photon causing the atom to drop back down to a lower energy level.</td>
+</tr>
+<tr class="even">
+<td><strong>(C) Stimulated Emission</strong></td>
+<td>occurs when an atom can exist in a higher energy state long enough to interact with a photon causing a second photon to be generated.</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
 
 # Population Inversion and the Journey to Excess Photon Generation
 
 Lasers exploit the principle of stimulated emission to encourage photon
-generation because the original transit photon isn't lost in the
+generation because the original transit photon isn’t lost in the
 process. This promotes a population increase of photons because for
 every 1 photon that interacts with a highly energized atom, 2 photons
 emerge. However, recall the lifetime of atoms occupying a highly excited
@@ -136,16 +148,10 @@ exponentially generate new photons within a system, clearly then more
 atoms need to occupy an energized state than their ground state. To do
 so, a process referred to as **Population Inversion** is employed.
 
-  ------------------------------------------------------------------------------------
-  ![image](2dd842933a8825ab3b094b5597443cb703870fa2.gif){width="3.378558617672791in"
-  height="2.25in"}
-  ------------------------------------------------------------------------------------
-
-  Unlike in normal population distributions that occur naturally where more atoms
-  occupy an unexcited ground state, a population inversion forces a dominant number of
-  atoms to occupy a higher excited state. Typically, an external pump source energizes
-  the atoms out of their ground state.
-  ------------------------------------------------------------------------------------
+| <img src="2dd842933a8825ab3b094b5597443cb703870fa2.gif" style="width:3.37856in;height:2.25in" alt="image" />                                                                                                                                                                                   |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                                                                                                                                                                                |
+| Unlike in normal population distributions that occur naturally where more atoms occupy an unexcited ground state, a population inversion forces a dominant number of atoms to occupy a higher excited state. Typically, an external pump source energizes the atoms out of their ground state. |
 
 Population inversion is a state in which a greater number of atoms
 occupy an excited state than in a lower unexcited ground state. This
@@ -153,11 +159,11 @@ distribution is typically not found in nature and hence the need to
 invert the natural distribution of energized atoms is required. However,
 a system which has undergone a population inversion will over time
 redistribute its system of atoms into roughly equal populations of
-energized and ground state atoms. This ultimately doesn't help with new
+energized and ground state atoms. This ultimately doesn’t help with new
 photon generation, no new photons are produced, and the photons that
 originally entered the system become the same number of photons which
 emerge from the system. Consequently, the concept of perpetually
-"pumping" atoms back into an excited state is required. Referred to as
+“pumping” atoms back into an excited state is required. Referred to as
 **Source Pumping,** laser systems require an external source of energy
 to maintain population inversion.
 
@@ -194,47 +200,20 @@ transition levels is derived specifically from the probability for an
 electron to occupy a transition level overlapping with the probability
 to occupy the orbital ground state of an atom.
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------
-  ![Lasers - Population                                                    ![example of population
-  Inversion](e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg){width="3.0in"   inversion.](5aee7decdc00d09e995ccbc976602224aa778bcd.png){width="3.0in"
-  height="1.215181539807524in"}                                            height="2.0315113735783026in"}
-  ------------------------------------------------------------------------ -------------------------------------------------------------------------
-  **Normal distribution** of atoms predicts that most atoms occupy their   
-  ground state. With **population inversion**, typically an external       
-  source of energy bumps atoms out of their ground state and into a        
-  metastable state that has a much slower lifetime.                        
+| <img src="e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />                                                                                                                             | <img src="5aee7decdc00d09e995ccbc976602224aa778bcd.png" style="width:3in;height:2.03151in" alt="example of population inversion." /> |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime. |                                                                                                                                      |
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------
-
-  --------------------------------------------------------------------------
-  **Relative          **Dominant state**
-  population of       
-  occupying atoms**   
-  ------------------- ------------------------------------------------------
-  $$N_{1} > N_{2}$$   Most atoms occupy the ground state and thus most
-                      transit photons are likely absorbed and spat back out
-                      nanoseconds later just to probably have the same
-                      process occur again up the road.
-
-                      
-
-  $$N_{1} = N_{2}$$   When population of atoms occupying a ground state
-                      becomes equal to the population of atoms occupying an
-                      energized state, the photon production falls to zero.
-                      No new photons are produced and the photons you start
-                      with are the same number of photons that emerge out of
-                      the system.
-
-                      
-
-  $$N_{1} < N_{2}$$   **Population Inversion**. Most atoms occupy an
-                      energized state to promote photon generation. While
-                      absorption still occurs along a transit photon's path
-                      through the atomic minefield, the generation of new
-                      photons greatly dominates the system. Without active
-                      pumping, population inversion tends to collapse back
-                      into $N_{1} = N_{2}$.
-  --------------------------------------------------------------------------
+| **Relative population of occupying atoms** | **Dominant state**                                                                                                                                                                                                                                                                                                                                             |
+|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                            
+ *N*<sub>1</sub> \> *N*<sub>2</sub>          | Most atoms occupy the ground state and thus most transit photons are likely absorbed and spat back out nanoseconds later just to probably have the same process occur again up the road.                                                                                                                                                                       |
+|                                            |                                                                                                                                                                                                                                                                                                                                                                |
+|                                            
+ *N*<sub>1</sub> = *N*<sub>2</sub>           | When population of atoms occupying a ground state becomes equal to the population of atoms occupying an energized state, the photon production falls to zero. No new photons are produced and the photons you start with are the same number of photons that emerge out of the system.                                                                         |
+|                                            |                                                                                                                                                                                                                                                                                                                                                                |
+|                                            
+ *N*<sub>1</sub> \< *N*<sub>2</sub>          | **Population Inversion**. Most atoms occupy an energized state to promote photon generation. While absorption still occurs along a transit photon’s path through the atomic minefield, the generation of new photons greatly dominates the system. Without active pumping, population inversion tends to collapse back into *N*<sub>1</sub> = *N*<sub>2</sub>. |
 
 # Three- and Four-level Energy bands
 
@@ -256,46 +235,21 @@ to be above the highest energy level, so how do they exist slightly
 above the ground state? What would cause atoms to normally skip through
 that metastable state and go on up to the other energy levels instead?
 
-  -----------------------------------------------------------------------------------------------------------------------------------------------------
-  ![three-level versus four-level                                                     
-  system](5a74e56958954d92d0e005a9eb76eccccaa172fb.png){width="4.137258311461068in"   
-  height="1.5in"}                                                                     
-  ----------------------------------------------------------------------------------- -----------------------------------------------------------------
-                                                                                      
-
-  **(1)**                                                                             **three-level system** where atoms drop back down to their ground
-                                                                                      state after emission.
-
-  **(2)**                                                                             **four-level system** where atoms drop down to an energy level
-                                                                                      still above the ground state. This construction is most efficient
-                                                                                      since pumping atoms back to a highly energized state requires
-                                                                                      less work.
-
-  **(3)**                                                                             **quasi three-level system** where atoms fall into an
-                                                                                      intermediate metastable state just above ground state.
-  -----------------------------------------------------------------------------------------------------------------------------------------------------
+| <img src="5a74e56958954d92d0e005a9eb76eccccaa172fb.png" style="width:4.13726in;height:1.5in" alt="three-level versus four-level system" /> |                                                                                                                                                                                                           |
+|--------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                            |                                                                                                                                                                                                           |
+| **(1)**                                                                                                                                    | **three-level system** where atoms drop back down to their ground state after emission.                                                                                                                   |
+| **(2)**                                                                                                                                    | **four-level system** where atoms drop down to an energy level still above the ground state. This construction is most efficient since pumping atoms back to a highly energized state requires less work. |
+| **(3)**                                                                                                                                    | **quasi three-level system** where atoms fall into an intermediate metastable state just above ground state.                                                                                              |
 
 # Laser Gain Mediums
 
-  -------------------------------------------------------------------------------
-  **Crystals**         Typically doped with rare earth metals: (neodymium,
-                       ytterbium, or erbium) or transition metal ions (titanium
-                       or chromium); most often yttrium aluminum garnet
-                       (Y3Al5O12), yttrium orthovanadate (YVO4), or sapphire
-                       (Al2O3);\[1\] and not often Cesium cadmium bromide
-                       (CsCdBr3)
-  -------------------- ----------------------------------------------------------
-  **Glasses**          silicate or phosphate glasses, doped with laser-active
-                       ions
-
-  **Gases**            mixtures of helium and neon (HeNe), nitrogen, argon,
-                       carbon monoxide, carbon dioxide, or metal vapors
-
-  **Semiconductors**   gallium arsenide (GaAs), indium gallium arsenide (InGaAs),
-                       or gallium nitride (GaN)
-
-  **Liquids**          dye solutions as used in dye lasers.
-  -------------------------------------------------------------------------------
+| **Crystals**       | Typically doped with rare earth metals: (neodymium, ytterbium, or erbium) or transition metal ions (titanium or chromium); most often yttrium aluminum garnet (Y3Al5O12), yttrium orthovanadate (YVO4), or sapphire (Al2O3);\[1\] and not often Cesium cadmium bromide (CsCdBr3) |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Glasses**        | silicate or phosphate glasses, doped with laser-active ions                                                                                                                                                                                                                      |
+| **Gases**          | mixtures of helium and neon (HeNe), nitrogen, argon, carbon monoxide, carbon dioxide, or metal vapors                                                                                                                                                                            |
+| **Semiconductors** | gallium arsenide (GaAs), indium gallium arsenide (InGaAs), or gallium nitride (GaN)                                                                                                                                                                                              |
+| **Liquids**        | dye solutions as used in dye lasers.                                                                                                                                                                                                                                             |
 
 # Optical Cavity Resonators
 
@@ -327,33 +281,27 @@ first **mode**, of the system and since energy of a photon is its
 propagation frequency, only photons of a specific energy are permitted
 to travel within the laser cavity.
 
-  ---------------------------------------------------------------------------------
-  ![Standing Wave: Definition, Ratio, Examples And Explanation » Science
-  ABC](e8bdc0e86250525c33bef4ae236318a0d7dfb4b5.jpg){width="3.0003215223097115in"
-  height="2.0in"}
-  ---------------------------------------------------------------------------------
-
-  A standing wave oscillates in time with a changing amplitude appearing in a fixed
-  position. The endpoints of a standing wave must end and start at the same point.
-  ---------------------------------------------------------------------------------
+| <img src="e8bdc0e86250525c33bef4ae236318a0d7dfb4b5.jpg" style="width:3.00032in;height:2in" alt="Standing Wave: Definition, Ratio, Examples And Explanation » Science ABC" /> |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                                                              |
+| A standing wave oscillates in time with a changing amplitude appearing in a fixed position. The endpoints of a standing wave must end and start at the same point.           |
 
 Not all photons emitted by the gain medium form a standing wave inside
 the laser cavity. The longest wavelength (lowest frequency) permitted
 is, in fact, determined by the length of the cavity. This is indicated
-by the primary wavelength, $\lambda_{1}$, or first mode of the cavity
+by the primary wavelength, *λ*<sub>1</sub>, or first mode of the cavity
 being expressed as:
 
-  ---------------------------------------------------------------------------
-  $$\lambda_{1} = 2L$$     or                      $$f_{1} = \frac{2L}{c}$$
-  ------------------------ ----------------------- --------------------------
-
-  ---------------------------------------------------------------------------
+|                        
+ *λ*<sub>1</sub> = 2*L*  | or  |                            
+                                $$f\_{1} = \\frac{2L}{c}$$  |
+|------------------------|-----|----------------------------|
 
 **Note**: losses due to diffraction and absorption within the cavity are
 omitted from the expression. However, losses typically modify the
 effective length of the cavity in the form of a percent of photon
 transmission within the system. The expression is simply modified to:
-$\lambda = 2nL$.
+*λ* = 2*n**L*.
 
 To eject photons from the laser cavity, one of the cavity mirrors is
 only coated with partial reflectivity. This means as photons complete
@@ -363,23 +311,15 @@ aperture which helps narrow the beam, then through several focusing
 lenses, and finally through a collimating lens. The collimator is what
 ensures the characteristic appearance of laser output by not only
 narrowing the beam width but aligning the photons along parallel lines.
-How do collimator's work? Do they polarize? Employ electromagnetic
+How do collimator’s work? Do they polarize? Employ electromagnetic
 properties? Or is it that they are designed to only allowed the photons
 oriented a certain direction to escape?
 
-  -----------------------------------------------------------------------------------------------------------------------------------
-  ![](f49d0b02c5e9936b19ccdc8f76055b0a122b69a3.png){width="4.0in"   ![](20252d173da8dbd9700417a4a10d85877da8af92.png){width="2.0in"
-  height="1.910805993000875in"}                                     height="1.53163167104112in"}
-  ----------------------------------------------------------------- -----------------------------------------------------------------
-  Illustration of a Nd:YAG solid-state laser being pumped by a      
-  flashlamp to stimulate the emission of photons within a confocal  
-  laser cavity resonator. In most applications, the output laser    
-  light is narrowed, and the direction of photons arranged parallel 
-  to one another using a collimated lens.                           
+| <img src="f49d0b02c5e9936b19ccdc8f76055b0a122b69a3.png" style="width:4in;height:1.91081in" />                                                                                                                                                                                                          | <img src="20252d173da8dbd9700417a4a10d85877da8af92.png" style="width:2in;height:1.53163in" /> |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Illustration of a Nd:YAG solid-state laser being pumped by a flashlamp to stimulate the emission of photons within a confocal laser cavity resonator. In most applications, the output laser light is narrowed, and the direction of photons arranged parallel to one another using a collimated lens. |                                                                                               |
 
-  -----------------------------------------------------------------------------------------------------------------------------------
-
-The Fabry--Pérot is the most basic example of a cavity resonator
+The Fabry–Pérot is the most basic example of a cavity resonator
 constructed of two flat (plane-parallel) mirrors. This cavity is also
 the most unreliable in practice since the mirrors need to be precisely
 aligned. Otherwise, light easily escapes the cavity. Consequently,
@@ -389,16 +329,11 @@ However, in these situations, a special reflective film is typically
 coated on either end of the crystal gain medium rather than using
 physical mirrors.
 
-  -----------------------------------------------------------------------
-  ![](94ff3cb975d14e106bfd13e82a0bf7ccd9d20722.png){width="3.0in"
-  height="1.1143963254593177in"}
-  -----------------------------------------------------------------------
-  A plane-parallel cavity resonator has flat mirrors (plane-parallel)
-  that are difficult to precisely align.
+| <img src="94ff3cb975d14e106bfd13e82a0bf7ccd9d20722.png" style="width:3in;height:1.1144in" />               |
+|------------------------------------------------------------------------------------------------------------|
+| A plane-parallel cavity resonator has flat mirrors (plane-parallel) that are difficult to precisely align. |
 
-  -----------------------------------------------------------------------
-
-> The precision of the Fabry--Pérot cavity makes it suitable for
+> The precision of the Fabry–Pérot cavity makes it suitable for
 > applications where alignment is critical. For example, the LIGO
 > (**L**aser **I**nterferometer **G**ravitational-Wave **O**bservatory)
 > used to confirm the existence of gravitational waves back in 2015
@@ -414,27 +349,19 @@ where the gain medium is placed. These cavities are typically used in
 applications where more uniformly distributed beam irradiance is focused
 at the beam center since narrower beams produce less angular deviation.
 
-  -----------------------------------------------------------------------
-  ![](d135ea3a985fa6f9ace49f041740def0a1e5c40c.png){width="3.0in"
-  height="0.9293055555555556in"}
-  -----------------------------------------------------------------------
-  ![](182af9caa667de2b3905505e49daa5542aa35add.png){width="3.0in"
-  height="1.2455008748906387in"}
-
-  A symmetric confocal cavity resonator has less-than spherical cut
-  mirrors with a radius of equal radii to the cavity length. The beam
-  waist, $w_{o}^{2}$, is found at the center where the gain medium is
-  often placed.
-  -----------------------------------------------------------------------
+| <img src="d135ea3a985fa6f9ace49f041740def0a1e5c40c.png" style="width:3in;height:0.92931in" />                                                                                                                                             |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="182af9caa667de2b3905505e49daa5542aa35add.png" style="width:3in;height:1.2455in" />                                                                                                                                              |
+| A symmetric confocal cavity resonator has less-than spherical cut mirrors with a radius of equal radii to the cavity length. The beam waist, *w*<sub>*o*</sub><sup>2</sup>, is found at the center where the gain medium is often placed. |
 
 # Longitudinal Modes
 
-Modes besides just the fundamental wavelength, $\lambda_{1}$, can exist
-within a cavity. Revisiting the vibrating string example from earlier,
-plucking the string generates the fundamental mode of the system.
-However, by manually shaking the string up and down, other standing
-waves can be produced inside the cavity. The only rule being that the
-oscillation must start and end at the same point -- otherwise
+Modes besides just the fundamental wavelength, *λ*<sub>1</sub>, can
+exist within a cavity. Revisiting the vibrating string example from
+earlier, plucking the string generates the fundamental mode of the
+system. However, by manually shaking the string up and down, other
+standing waves can be produced inside the cavity. The only rule being
+that the oscillation must start and end at the same point – otherwise
 discontinuities in the oscillation cycle occur. Consequently, with such
 a flexible rule, the number of standing waves permitted inside a cavity
 is infinite. In reality, though, the number of modes within a cavity
@@ -442,11 +369,11 @@ permitted is dependent on not only the length of the cavity but the
 laser gain medium emitting the photons as well.
 
 The standing wave equation for the fundamental mode of a laser cavity
-with an undetermined phase $\varphi$ is represented as:
+with an undetermined phase *φ* is represented as:
 
-$$y(t) = \sin{\left( 2\pi f_{1}t \pm \varphi \right) = \boxed{\sin\left( 2\pi\frac{c}{\lambda_{1}}t\  \pm \ \varphi \right)}\ }$$
+$$y(t) = \\sin{\\left( 2\\pi f\_{1}t \\pm \\varphi \\right) = \\boxed{\\sin\\left( 2\\pi\\frac{c}{\\lambda\_{1}}t\\  \\pm \\ \\varphi \\right)}\\ }$$
 
-The frequency, $f$, is the rate at which a photon propagates through a
+The frequency, *f*, is the rate at which a photon propagates through a
 medium and should not be confused with the velocity at which the photon
 travels through a medium. If the fundamental mode of the laser cavity is
 directly proportional to the length of the cavity, then the rate at
@@ -454,7 +381,7 @@ which the photon propagates through that cavity must thereby be
 proportional to the length as well. Consequently, the frequency at which
 a standing wave within the laser cavity is expressed as:
 
-$$f_{1} = \frac{c}{\lambda_{1}} = \boxed{\frac{c}{2L}}$$
+$$f\_{1} = \\frac{c}{\\lambda\_{1}} = \\boxed{\\frac{c}{2L}}$$
 
 In the above expression, both length and velocity, c, of the frequency
 must remain fixed. Then, to obey the rule that a standing wave must
@@ -463,7 +390,7 @@ frequency modes permitted must be an integer multiple, q, of the
 fundamental frequency of the cavity. Thus, discrete modes, q, of the
 radiated frequencies of photons occupying the cavity is expressed as:
 
-$$f_{q} = \boxed{q \cdot \frac{c}{2L}}$$
+$$f\_{q} = \\boxed{q \\cdot \\frac{c}{2L}}$$
 
 Non-integer values of q are not permitted since the resultant wave
 within the cavity would have discontinuous endpoints that do not match
@@ -471,16 +398,12 @@ up. Subsequently, the cavity modes are truly discretely spaced since the
 frequency separation, or difference, of two neighboring modes resolves
 the fundamental frequency of the laser cavity. In other words:
 
-$$\boxed{\Delta f = f_{q} - f_{q - 1} = \frac{c}{2L}}$$
+$$\\boxed{\\Delta f = f\_{q} - f\_{q - 1} = \\frac{c}{2L}}$$
 
-  -------------------------------------------------------------------------------
-  ![](5097c7f91855c584c88dc9b01d4da764703778ce.png){width="2.999753937007874in"
-  height="1.5673337707786528in"}
-  -------------------------------------------------------------------------------
-
-  Illustration of different modes (q) resonating within the laser cavity. The
-  allowed modes of the cavity are integer multiples of fundamental mode $f_{1}$
-  -------------------------------------------------------------------------------
+| <img src="5097c7f91855c584c88dc9b01d4da764703778ce.png" style="width:2.99975in;height:1.56733in" />                                                               |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                                                   |
+| Illustration of different modes (q) resonating within the laser cavity. The allowed modes of the cavity are integer multiples of fundamental mode *f*<sub>1</sub> |
 
 The number of possible longitudinal modes of a cavity is determined by
 the gain bandwidth of the active gain medium. By the very nature of
@@ -500,18 +423,10 @@ within the cavity. For gaussian distributions, the laser threshold is
 typically expressed as the full width, half max (FWHM) of the gain
 curve. That is, the width of the curve at half the maximum value.
 
-  -----------------------------------------------------------------------
-  ![](a8351d0b93d43244d6899b893395f5e9ab415e92.gif){width="3.5in"
-  height="2.7758409886264217in"}
-  -----------------------------------------------------------------------
-
-  Typically, active gain mediums are expressed as having a near gaussian
-  distribution. That is, most of the photon population are emitted at a
-  specific frequency. However, due to manufacturing and material
-  differences in the medium, other frequencies are emitted as well.
-  However, longitudinal modes form within the cavity for lasing
-  frequencies that only obey the standing wave condition.
-  -----------------------------------------------------------------------
+| <img src="a8351d0b93d43244d6899b893395f5e9ab415e92.gif" style="width:3.5in;height:2.77584in" />                                                                                                                                                                                                                                                                                                     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Typically, active gain mediums are expressed as having a near gaussian distribution. That is, most of the photon population are emitted at a specific frequency. However, due to manufacturing and material differences in the medium, other frequencies are emitted as well. However, longitudinal modes form within the cavity for lasing frequencies that only obey the standing wave condition. |
 
 # Mode Locking
 
@@ -530,17 +445,11 @@ mode-locked laser.
 > caused by separation of corneal tissue is then folded back to allow
 > reshaping of the corneal tissue using an excimer lens.
 
-  --------------------------------------------------------------------------------
-  ![](f91b1170e3c1df526d49bdb98dbb13fc92448de9.png){width="3.9988910761154854in"
-  height="1.1391305774278215in"}
-  --------------------------------------------------------------------------------
-  ![phase-locked and unlocked multimode
-  operation](19516eb2708a8df360718ea7870a1911954263e3.png){width="4.0in"
-  height="2.1404713473315837in"}
-
-  Mode-locked techniques of Longitudinal laser modes will create short pulses.
-  Modes without mode locking have random phase and thus no pulse shaping occurs.
-  --------------------------------------------------------------------------------
+| <img src="f91b1170e3c1df526d49bdb98dbb13fc92448de9.png" style="width:3.99889in;height:1.13913in" />                                                         |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="19516eb2708a8df360718ea7870a1911954263e3.png" style="width:4in;height:2.14047in" alt="phase-locked and unlocked multimode operation" />           |
+|                                                                                                                                                             |
+| Mode-locked techniques of Longitudinal laser modes will create short pulses. Modes without mode locking have random phase and thus no pulse shaping occurs. |
 
 # Transverse Modes
 
@@ -556,19 +465,13 @@ transverse modes since the degree of angular deviation from the center
 of the cavity is reduced. This means lower order modes are more
 reproduceable with a reasonably stable laser, while higher order modes
 require greater care. Why is the output of longitudinal such a nicely
-behaved wavefront, but for transverse it seems... a bit of a mess, from
+behaved wavefront, but for transverse it seems… a bit of a mess, from
 this photo?
 
-  -----------------------------------------------------------------------
-  ![](c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png){width="4.5in"
-  height="2.510261373578303in"}
-  -----------------------------------------------------------------------
-
-  Schematic of a Fabry-Perot (FP) cavity laser. It consists of a pair of
-  mirrors on either side of a gain medium. The cavity resonance condition
-  determines (A) the transverse and (B) the longitudinal field profiles
-  of the cavity modes.
-  -----------------------------------------------------------------------
+| <img src="c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png" style="width:4.5in;height:2.51026in" />                                                                                                                                           |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                                                                                                                                           |
+| Schematic of a Fabry-Perot (FP) cavity laser. It consists of a pair of mirrors on either side of a gain medium. The cavity resonance condition determines (A) the transverse and (B) the longitudinal field profiles of the cavity modes. |
 
 Basic experiments can demonstrate the various lower order transverse
 modes. For instance, mounting one of the cavity mirrors onto a precision
@@ -583,15 +486,26 @@ narrowing aperture in line with the beam. Narrowing the aperture removes
 higher order transverse modes from the beam while passing only the
 fundamental transverse mode, TEM00.
 
-+-----------------------------------+-----------------------------------+
-| ![](225f3e1975cb                  | ![](b08fc0c3145f                  |
-| 83526eadd4d1fc6e9daff18a1cd3.png) | acf46b9227a84832f91a09c2d393.png) |
-+===================================+===================================+
-| **Hermite-gaussian**              | **Laguerre-gaussian**             |
-|                                   |                                   |
-| Rectangular transverse mode       | cylindrical transverse mode       |
-| patterns TEM(mn)                  | patterns TEM(pl)                  |
-+-----------------------------------+-----------------------------------+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><img src="225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" /></th>
+<th><img src="b08fc0c3145facf46b9227a84832f91a09c2d393.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>Hermite-gaussian</strong></p>
+<p>Rectangular transverse mode patterns TEM(mn)</p></td>
+<td><p><strong>Laguerre-gaussian</strong></p>
+<p>cylindrical transverse mode patterns TEM(pl)</p></td>
+</tr>
+</tbody>
+</table>
 
 # Sources:
 
