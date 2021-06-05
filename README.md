@@ -1,6 +1,6 @@
 # Table of Contents
 1. [Introduction](#introduction)
-2. [Lasers, an overview](#lasers,-an-overview)
+2. [Lasers, an overview](#lasers\,-an-overview)
 3. [Photon Absorption and Emission](#photon-absorption-and-emission)
 4. [Population Inversion and the Journey to Excess Photon Generation](#population-inversion-and-the-journey-to-excess-photon-generation)
 5. [Three- and Four-level Energy bands](#three\--and-four\-level-energy-bands)
@@ -106,18 +106,30 @@ is lost to the emitted photon rather than gained.
 The diagram below summarizes the various forms of photon interaction so
 far discussed:
 
+<p align="center">
+<img src="media/1050ff09924f80f48c51fe94e8fd6ba06474d548.png" style="width:4.13127in;height:2.25in" />
+</p>
+
+> Three forms of photon interaction are illustrated for an atom described with a 3-level electron energy diagram.
+
+|                             |                                                                                                                                                                                                   |
+|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|**(A) Absorption**           |occurs when a photon carrying quanta of energy is absorbed by an atom causing an atom’s electron to transition to a higher energy level for a short period of time.                                |
+|**(B) Spontaneous Emission** |occurs when the electron can no longer hold its higher energy state and releases the original quanta of energy in the form of a photon causing the atom to drop back down to a lower energy level. |
+|**(C) Stimulated Emission**  |occurs when an atom can exist in a higher energy state long enough to interact with a photon causing a second photon to be generated.                                                              |
+
 <table>
 <colgroup>
 <col style="width: 100%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/1050ff09924f80f48c51fe94e8fd6ba06474d548.png" style="width:4.13127in;height:2.25in" /></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Three forms of photon interaction are illustrated for an atom described with a 3-level electron energy diagram.</p>
+<td><p></p>
 <table>
 <colgroup>
 <col style="width: 27%" />
@@ -126,17 +138,17 @@ far discussed:
 <thead>
 <tr class="header">
 <th><strong>(A) Absorption</strong></th>
-<th>occurs when a photon carrying quanta of energy is absorbed by an atom causing an atom’s electron to transition to a higher energy level for a short period of time.</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>(B) Spontaneous Emission</strong></td>
-<td>occurs when the electron can no longer hold its higher energy state and releases the original quanta of energy in the form of a photon causing the atom to drop back down to a lower energy level.</td>
+<td></td>
 </tr>
 <tr class="even">
 <td><strong>(C) Stimulated Emission</strong></td>
-<td>occurs when an atom can exist in a higher energy state long enough to interact with a photon causing a second photon to be generated.</td>
+<td></td>
 </tr>
 </tbody>
 </table></td>
@@ -224,14 +236,13 @@ to occupy the orbital ground state of an atom.
 <p align="center">
 <img src="media/e2a895e02dd9de9df4868d1ba2d55e7e4d209872.jpg" style="width:3in;height:1.21518in" alt="Lasers - Population Inversion" />
 </p>
-
 > **Normal distribution** of atoms predicts that most atoms occupy their ground state. With **population inversion**, typically an external source of energy bumps atoms out of their ground state and into a metastable state that has a much slower lifetime.
 
 | **Relative population of occupying atoms** | **Dominant state**                                                                                                                                                                                                                                                                                                                                             |
 |--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *N*<sub>1</sub> \> *N*<sub>2</sub>          | Most atoms occupy the ground state and thus most transit photons are likely absorbed and spat back out nanoseconds later just to probably have the same process occur again up the road.                                                                                                                                                                      |
-| *N*<sub>1</sub> = *N*<sub>2</sub>           | When population of atoms occupying a ground state becomes equal to the population of atoms occupying an energized state, the photon production falls to zero. No new photons are produced and the photons you start with are the same number of photons that emerge out of the system.                                                                        |
-| *N*<sub>1</sub> \< *N*<sub>2</sub>          | **Population Inversion**. Most atoms occupy an energized state to promote photon generation. While absorption still occurs along a transit photon’s path through the atomic minefield, the generation of new photons greatly dominates the system. Without active pumping, population inversion tends to collapse back into *N*<sub>1</sub> = *N*<sub>2</sub>.|
+| *N*<sub>1</sub> \> *N*<sub>2</sub>         | Most atoms occupy the ground state and thus most transit photons are likely absorbed and spat back out nanoseconds later just to probably have the same process occur again up the road.                                                                                                                                                                      |
+| *N*<sub>1</sub> = *N*<sub>2</sub>          | When population of atoms occupying a ground state becomes equal to the population of atoms occupying an energized state, the photon production falls to zero. No new photons are produced and the photons you start with are the same number of photons that emerge out of the system.                                                                        |
+| *N*<sub>1</sub> \< *N*<sub>2</sub>         | **Population Inversion**. Most atoms occupy an energized state to promote photon generation. While absorption still occurs along a transit photon’s path through the atomic minefield, the generation of new photons greatly dominates the system. Without active pumping, population inversion tends to collapse back into *N*<sub>1</sub> = *N*<sub>2</sub>.|
 
 # Three- and Four-level Energy bands
 
