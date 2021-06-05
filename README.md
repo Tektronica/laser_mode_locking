@@ -277,10 +277,7 @@ first **mode**, of the system and since energy of a photon is its
 propagation frequency, only photons of a specific energy are permitted
 to travel within the laser cavity.
 
-| <img src="media/e8bdc0e86250525c33bef4ae236318a0d7dfb4b5.jpg" style="width:3.00032in;height:2in" alt="Standing Wave: Definition, Ratio, Examples And Explanation » Science ABC" /> |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                                                                                                                              |
-| A standing wave oscillates in time with a changing amplitude appearing in a fixed position. The endpoints of a standing wave must end and start at the same point.           |
+<img src="media/e8bdc0e86250525c33bef4ae236318a0d7dfb4b5.jpg" style="width:3.00032in;height:2in" alt="Standing Wave: Definition, Ratio, Examples And Explanation » Science ABC" />
 
 Not all photons emitted by the gain medium form a standing wave inside
 the laser cavity. The longest wavelength (lowest frequency) permitted
@@ -343,10 +340,7 @@ where the gain medium is placed. These cavities are typically used in
 applications where more uniformly distributed beam irradiance is focused
 at the beam center since narrower beams produce less angular deviation.
 
-| <img src="media/d135ea3a985fa6f9ace49f041740def0a1e5c40c.png" style="width:3in;height:0.92931in" />                                                                                                                                             |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="media/182af9caa667de2b3905505e49daa5542aa35add.png" style="width:3in;height:1.2455in" />                                                                                                                                              |
-| A symmetric confocal cavity resonator has less-than spherical cut mirrors with a radius of equal radii to the cavity length. The beam waist, *w*<sub>*o*</sub><sup>2</sup>, is found at the center where the gain medium is often placed. |
+<img src="media/d135ea3a985fa6f9ace49f041740def0a1e5c40c.png" style="width:3in;height:0.92931in" />
 
 # Longitudinal Modes
 
@@ -394,10 +388,7 @@ the fundamental frequency of the laser cavity. In other words:
 
 $$\\boxed{\\Delta f = f\_{q} - f\_{q - 1} = \\frac{c}{2L}}$$
 
-| <img src="media/5097c7f91855c584c88dc9b01d4da764703778ce.png" style="width:2.99975in;height:1.56733in" />                                                               |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                                                                                                                   |
-| Illustration of different modes (q) resonating within the laser cavity. The allowed modes of the cavity are integer multiples of fundamental mode *f*<sub>1</sub> |
+<img src="media/5097c7f91855c584c88dc9b01d4da764703778ce.png" style="width:2.99975in;height:1.56733in" />
 
 The number of possible longitudinal modes of a cavity is determined by
 the gain bandwidth of the active gain medium. By the very nature of
@@ -417,10 +408,7 @@ within the cavity. For gaussian distributions, the laser threshold is
 typically expressed as the full width, half max (FWHM) of the gain
 curve. That is, the width of the curve at half the maximum value.
 
-| <img src="media/a8351d0b93d43244d6899b893395f5e9ab415e92.gif" style="width:3.5in;height:2.77584in" />                                                                                                                                                                                                                                                                                                     |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Typically, active gain mediums are expressed as having a near gaussian distribution. That is, most of the photon population are emitted at a specific frequency. However, due to manufacturing and material differences in the medium, other frequencies are emitted as well. However, longitudinal modes form within the cavity for lasing frequencies that only obey the standing wave condition. |
+<img src="media/a8351d0b93d43244d6899b893395f5e9ab415e92.gif" style="width:3.5in;height:2.77584in" />
 
 # Mode Locking
 
@@ -439,11 +427,7 @@ mode-locked laser.
 > caused by separation of corneal tissue is then folded back to allow
 > reshaping of the corneal tissue using an excimer lens.
 
-| <img src="media/f91b1170e3c1df526d49bdb98dbb13fc92448de9.png" style="width:3.99889in;height:1.13913in" />                                                         |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="media/19516eb2708a8df360718ea7870a1911954263e3.png" style="width:4in;height:2.14047in" alt="phase-locked and unlocked multimode operation" />           |
-|                                                                                                                                                             |
-| Mode-locked techniques of Longitudinal laser modes will create short pulses. Modes without mode locking have random phase and thus no pulse shaping occurs. |
+<img src="media/19516eb2708a8df360718ea7870a1911954263e3.png" style="width:4in;height:2.14047in" alt="phase-locked and unlocked multimode operation" />
 
 # Transverse Modes
 
@@ -462,10 +446,7 @@ require greater care. Why is the output of longitudinal such a nicely
 behaved wavefront, but for transverse it seems… a bit of a mess, from
 this photo?
 
-| <img src="media/c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png" style="width:4.5in;height:2.51026in" />                                                                                                                                           |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                                                                                                                                                                                                                           |
-| Schematic of a Fabry-Perot (FP) cavity laser. It consists of a pair of mirrors on either side of a gain medium. The cavity resonance condition determines (A) the transverse and (B) the longitudinal field profiles of the cavity modes. |
+<img src="media/c6a21eb3bdbe3e5e3bd9dcf091b3ae35b8bd470b.png" style="width:4.5in;height:2.51026in" />
 
 Basic experiments can demonstrate the various lower order transverse
 modes. For instance, mounting one of the cavity mirrors onto a precision
@@ -480,26 +461,7 @@ narrowing aperture in line with the beam. Narrowing the aperture removes
 higher order transverse modes from the beam while passing only the
 fundamental transverse mode, TEM00.
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><img src="media/225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" /></th>
-<th><img src="media/b08fc0c3145facf46b9227a84832f91a09c2d393.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>Hermite-gaussian</strong></p>
-<p>Rectangular transverse mode patterns TEM(mn)</p></td>
-<td><p><strong>Laguerre-gaussian</strong></p>
-<p>cylindrical transverse mode patterns TEM(pl)</p></td>
-</tr>
-</tbody>
-</table>
+<img src="media/225f3e1975cb83526eadd4d1fc6e9daff18a1cd3.png" />
 
 # Sources:
 
