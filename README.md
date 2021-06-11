@@ -19,7 +19,7 @@ medium, and the number of modes centered around the central mode
 frequency are specified.
 
 <p align="center">
-<img src="media/GUI.png"/>
+![](media/GUI.png)
 </p>
 
 # Lasers, an overview
