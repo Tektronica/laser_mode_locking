@@ -18,9 +18,7 @@ simulation is of a mode-locked laser where the cavity length, the gain
 medium, and the number of modes centered around the central mode
 frequency are specified.
 
-<p align="center">
-![](media/GUI.png)
-</p>
+![](images/static/gui_example.jpg)
 
 # Lasers, an overview
 
